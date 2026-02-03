@@ -2,9 +2,10 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import ProtectedRoute from "./components/ProtectedRoute";
 import Login from "./pages/Login";
+import Signup from "./pages/Signup";
+import ForgotPassword from "./pages/ForgotPassword";
 import Home from "./pages/Home";
 import MyTrips from "./pages/MyTrips";
-// ... other imports
 
 function App() {
   return (
@@ -12,6 +13,8 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/forgot-password" element={<ForgotPassword />} />
 
         {/* Protected Pages */}
         <Route
