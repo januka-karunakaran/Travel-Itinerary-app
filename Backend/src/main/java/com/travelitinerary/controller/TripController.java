@@ -1,8 +1,8 @@
-package com.tripgenie.controller;
+package com.travelitinerary.controller;
 
-import com.tripgenie.model.Itinerary;
-import com.tripgenie.repository.TripRepository;
-import com.tripgenie.service.GeminiService;
+import com.travelitinerary.model.Itinerary;
+import com.travelitinerary.repository.TripRepository;
+import com.travelitinerary.service.GeminiService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;

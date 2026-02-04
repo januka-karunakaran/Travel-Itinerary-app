@@ -1,6 +1,6 @@
-package com.tripgenie.repository;
+package com.travelitinerary.repository;
 
-import com.tripgenie.model.Itinerary;
+import com.travelitinerary.model.Itinerary;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 import java.util.List;

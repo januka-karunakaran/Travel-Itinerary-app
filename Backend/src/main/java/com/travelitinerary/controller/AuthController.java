@@ -1,13 +1,12 @@
-package com.tripgenie.controller;
+package com.travelitinerary.controller;
 
-import com.tripgenie.model.User;
-import com.tripgenie.repository.UserRepository;
+import com.travelitinerary.model.User;
+import com.travelitinerary.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/auth")
-@CrossOrigin(origins = "*")
 public class AuthController {
 
     @Autowired private UserRepository userRepository;

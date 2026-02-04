@@ -1,5 +1,63 @@
 package com.travelitinerary.model;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document(collection = "itineraries")
 public class Itinerary {
-    
+    @Id
+    private String id;
+    private String userId;
+    private String destination;
+    private int days;
+    private String budget;
+    private String planText;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
+    }
+
+    public String getDestination() {
+        return destination;
+    }
+
+    public void setDestination(String destination) {
+        this.destination = destination;
+    }
+
+    public int getDays() {
+        return days;
+    }
+
+    public void setDays(int days) {
+        this.days = days;
+    }
+
+    public String getBudget() {
+        return budget;
+    }
+
+    public void setBudget(String budget) {
+        this.budget = budget;
+    }
+
+    public String getPlanText() {
+        return planText;
+    }
+
+    public void setPlanText(String planText) {
+        this.planText = planText;
+    }
 }

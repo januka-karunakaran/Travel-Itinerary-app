@@ -1,4 +1,4 @@
-package com.service;
+package com.travelitinerary.service;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
@@ -22,7 +22,7 @@ public class GeminiService {
         String promptText = String.format(
             "You are an expert travel agent. Create a highly detailed %d-day itinerary for a trip to %s. " +
             "The budget is %s. For each day, provide a morning, afternoon, and evening activity. " +
-            "Format the output with clear 'Day X' headings.", 
+            "Format the output with clear 'Day X' headings.",
             days, destination, budget
         );
 
@@ -41,7 +41,7 @@ public class GeminiService {
             List candidates = (List) response.get("candidates");
             Map content = (Map) ((Map) candidates.get(0)).get("content");
             List parts = (List) content.get("parts");
-            
+
             return (String) ((Map) parts.get(0)).get("text");
         } catch (Exception e) {
             e.printStackTrace();
