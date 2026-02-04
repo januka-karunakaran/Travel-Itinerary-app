@@ -1,4 +1,5 @@
 com\travelitinerary\model\User.class
+com\travelitinerary\repository\TripRepository.class
 com\travelitinerary\controller\AuthController.class
 com\travelitinerary\service\GeminiService.class
 com\travelitinerary\TripGenieApplication$1.class
@@ -7,3 +8,5 @@ com\travelitinerary\config\DataInitializer.class
 com\travelitinerary\repository\UserRepository.class
 com\travelitinerary\config\SecurityConfig.class
 com\service\GeminiService.class
+com\travelitinerary\model\Itinerary.class
+com\travelitinerary\controller\TripController.class
