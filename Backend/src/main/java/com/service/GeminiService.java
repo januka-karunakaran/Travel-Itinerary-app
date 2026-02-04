@@ -15,6 +15,7 @@ public class GeminiService {
     private final String GEMINI_API_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=";
 
     public String getAIItinerary(String destination, int days, String budget) {
+        @SuppressWarnings("all")
         RestTemplate restTemplate = new RestTemplate();
         String url = GEMINI_API_URL + apiKey;
 
