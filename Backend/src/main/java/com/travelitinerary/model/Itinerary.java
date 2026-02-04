@@ -1,5 +1,4 @@
 package com.travelitinerary.model;
-
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -13,6 +12,17 @@ public class Itinerary {
     private String budget;
     private String planText;
 
+    // Constructors
+    public Itinerary() {}
+
+    public Itinerary(String userId, String destination, int days, String budget) {
+        this.userId = userId;
+        this.destination = destination;
+        this.days = days;
+        this.budget = budget;
+    }
+
+    // Getters and Setters
     public String getId() {
         return id;
     }
@@ -60,4 +70,8 @@ public class Itinerary {
     public void setPlanText(String planText) {
         this.planText = planText;
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> origin/main
