@@ -8,6 +8,11 @@ export default function Signup() {
     const [error, setError] = useState('');
     const navigate = useNavigate();
 
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setForm(prev => ({ ...prev, [name]: value }));
+    };
+
     const handleSignup = async (e) => {
         e.preventDefault();
         setError('');
@@ -48,23 +53,29 @@ export default function Signup() {
             <form onSubmit={handleSignup}>
                 <input
                     type="text"
+                    name="name"
+                    autoComplete="name"
                     placeholder="Full Name"
                     value={form.name}
-                    onChange={e => setForm({...form, name: e.target.value})}
+                    onChange={handleChange}
                     required
                 />
                 <input
                     type="email"
+                    name="email"
+                    autoComplete="email"
                     placeholder="Email"
                     value={form.email}
-                    onChange={e => setForm({...form, email: e.target.value})}
+                    onChange={handleChange}
                     required
                 />
                 <input
                     type="password"
+                    name="password"
+                    autoComplete="new-password"
                     placeholder="Password"
                     value={form.password}
-                    onChange={e => setForm({...form, password: e.target.value})}
+                    onChange={handleChange}
                     required
                 />
                 <button type="submit" disabled={loading}>
