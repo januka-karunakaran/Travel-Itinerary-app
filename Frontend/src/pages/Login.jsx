@@ -1,30 +1,59 @@
-import { useState } from 'react';
-import { useNavigate, Link } from 'react-router-dom';
-import { loginUser } from '../api/api';
+import React, { useState } from "react";
+import axios from "axios";
+import { useNavigate, Link } from "react-router-dom";
 
 export default function Login() {
-    const [form, setForm] = useState({ email: '', password: '' });
-    const navigate = useNavigate();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
-    const handleLogin = async (e) => {
-        e.preventDefault();
-        try {
-            const res = await loginUser(form);
-            localStorage.setItem('userId', res.data.id);
-            navigate('/home');
-        } catch (err) { alert("Invalid Credentials"); }
-    };
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await axios.post(
+        "http://localhost:8080/api/auth/login",
+        {
+          email,
+          password,
+        },
+      );
 
-    return (
-        <div className="auth-card">
-            <h2>Login to TripGenie</h2>
-            <form onSubmit={handleLogin}>
-                <input type="email" placeholder="Email" onChange={e => setForm({...form, email: e.target.value})} required />
-                <input type="password" placeholder="Password" onChange={e => setForm({...form, password: e.target.value})} required />
-                <button type="submit">Login</button>
-            </form>
-            <Link to="/forgot-password">Forgot Password?</Link>
-            <p>New here? <Link to="/signup">Create Account</Link></p>
+      // Check if response contains the user ID from MongoDB
+      if (response.data && response.data.id) {
+        localStorage.setItem("userId", response.data.id);
+        localStorage.setItem("userName", response.data.name);
+
+        alert("Login Successful! Redirecting...");
+        navigate("/home"); // THIS MOVES YOU TO THE NEXT PAGE
+      }
+    } catch (error) {
+      console.error("Login Error:", error);
+      alert(error.response?.data || "Login failed. Check your connection.");
+    }
+  };
+
+  return (
+    <div className="auth-container">
+      <form onSubmit={handleLogin} className="auth-form">
+        <h2>TripGenie Login</h2>
+        <input
+          type="email"
+          placeholder="Email"
+          required
+          onChange={(e) => setEmail(e.target.value)}
+        />
+        <input
+          type="password"
+          placeholder="Password"
+          required
+          onChange={(e) => setPassword(e.target.value)}
+        />
+        <button type="submit">Login</button>
+        <div className="links">
+          <Link to="/signup">Create Account</Link>
+          <Link to="/forgot-password">Forgot Password?</Link>
         </div>
-    );
+      </form>
+    </div>
+  );
 }

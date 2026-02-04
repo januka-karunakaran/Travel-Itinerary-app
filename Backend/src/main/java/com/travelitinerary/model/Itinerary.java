@@ -70,8 +70,4 @@ public class Itinerary {
     public void setPlanText(String planText) {
         this.planText = planText;
     }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> origin/main
