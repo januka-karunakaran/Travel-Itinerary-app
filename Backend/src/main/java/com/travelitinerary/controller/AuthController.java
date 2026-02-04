@@ -13,15 +13,26 @@ public class AuthController {
 
     @PostMapping("/signup")
     public User signup(@RequestBody User user) {
-        return userRepository.save(user);
+        System.out.println("🔵 Signup Request - Email: " + user.getEmail() + ", Name: " + user.getName());
+        User saved = userRepository.save(user);
+        System.out.println("✅ User saved with ID: " + saved.getId());
+        return saved;
     }
 
     @PostMapping("/login")
     public User login(@RequestBody User user) {
+        System.out.println("🔵 Login attempt - Email: " + user.getEmail());
         User existing = userRepository.findByEmail(user.getEmail());
-        if (existing != null && existing.getPassword().equals(user.getPassword())) {
+        if (existing == null) {
+            System.out.println("❌ User not found in database");
+            throw new RuntimeException("Invalid Credentials");
+        }
+        System.out.println("✅ User found - Checking password...");
+        if (existing.getPassword().equals(user.getPassword())) {
+            System.out.println("✅ Password matches! Login successful");
             return existing;
         }
+        System.out.println("❌ Password mismatch");
         throw new RuntimeException("Invalid Credentials");
     }
 }

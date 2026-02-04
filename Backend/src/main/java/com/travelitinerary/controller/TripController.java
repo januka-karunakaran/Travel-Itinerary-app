@@ -9,7 +9,6 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/trips")
-@CrossOrigin(origins = "*") // Allows React to talk to Spring Boot
 public class TripController {
 
     @Autowired private GeminiService geminiService;
