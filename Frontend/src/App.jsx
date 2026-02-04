@@ -10,30 +10,35 @@ import MyTrips from "./pages/MyTrips";
 function App() {
   return (
     <Router>
+      {/* Navbar stays at the top of every page */}
       <Navbar />
-      <Routes>
-        <Route path="/" element={<Login />} />
-        <Route path="/signup" element={<Signup />} />
-        <Route path="/forgot-password" element={<ForgotPassword />} />
 
-        {/* Protected Pages */}
-        <Route
-          path="/home"
-          element={
-            <ProtectedRoute>
-              <Home />
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path="/my-trips"
-          element={
-            <ProtectedRoute>
-              <MyTrips />
-            </ProtectedRoute>
-          }
-        />
-      </Routes>
+      <div className="main-content">
+        <Routes>
+          {/* Public Routes */}
+          <Route path="/" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/forgot-password" element={<ForgotPassword />} />
+
+          {/* Protected Pages: Only accessible if userId is in localStorage */}
+          <Route
+            path="/home"
+            element={
+              <ProtectedRoute>
+                <Home />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/my-trips"
+            element={
+              <ProtectedRoute>
+                <MyTrips />
+              </ProtectedRoute>
+            }
+          />
+        </Routes>
+      </div>
     </Router>
   );
 }

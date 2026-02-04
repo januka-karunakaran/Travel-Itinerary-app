@@ -3,36 +3,35 @@ package com.travelitinerary.controller;
 import com.travelitinerary.model.User;
 import com.travelitinerary.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/auth")
+@CrossOrigin(origins = "http://localhost:5173") // Connects to your Vite/React port
 public class AuthController {
 
-    @Autowired private UserRepository userRepository;
+    @Autowired 
+    private UserRepository userRepository;
 
     @PostMapping("/signup")
-    public User signup(@RequestBody User user) {
-        System.out.println("🔵 Signup Request - Email: " + user.getEmail() + ", Name: " + user.getName());
-        User saved = userRepository.save(user);
-        System.out.println("✅ User saved with ID: " + saved.getId());
-        return saved;
+    public ResponseEntity<?> signup(@RequestBody User user) {
+        if(userRepository.findByEmail(user.getEmail()) != null) {
+            return ResponseEntity.badRequest().body("Email already exists!");
+        }
+        return ResponseEntity.ok(userRepository.save(user));
     }
 
     @PostMapping("/login")
-    public User login(@RequestBody User user) {
-        System.out.println("🔵 Login attempt - Email: " + user.getEmail());
+    public ResponseEntity<?> login(@RequestBody User user) {
         User existing = userRepository.findByEmail(user.getEmail());
-        if (existing == null) {
-            System.out.println("❌ User not found in database");
-            throw new RuntimeException("Invalid Credentials");
+        
+        if (existing != null && existing.getPassword().equals(user.getPassword())) {
+            // Success: Return the full user object (including ID)
+            return ResponseEntity.ok(existing);
         }
-        System.out.println("✅ User found - Checking password...");
-        if (existing.getPassword().equals(user.getPassword())) {
-            System.out.println("✅ Password matches! Login successful");
-            return existing;
-        }
-        System.out.println("❌ Password mismatch");
-        throw new RuntimeException("Invalid Credentials");
+        // Failure: Return error status
+        return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid Credentials");
     }
 }
