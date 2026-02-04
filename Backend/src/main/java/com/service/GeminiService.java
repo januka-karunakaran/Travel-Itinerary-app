@@ -15,7 +15,11 @@ public class GeminiService {
     private final String GEMINI_API_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=";
 
     public String getAIItinerary(String destination, int days, String budget) {
-        @SuppressWarnings("all")
+        // If API key is not configured, return a mock itinerary
+        if (apiKey == null || apiKey.isEmpty() || apiKey.equals("YOUR_ACTUAL_API_KEY")) {
+            return generateMockItinerary(destination, days, budget);
+        }
+
         RestTemplate restTemplate = new RestTemplate();
         String url = GEMINI_API_URL + apiKey;
 
@@ -48,5 +52,27 @@ public class GeminiService {
             e.printStackTrace();
             return "Error: The AI Service is currently unavailable. Please try again later.";
         }
+    }
+
+    private String generateMockItinerary(String destination, int days, String budget) {
+        StringBuilder itinerary = new StringBuilder();
+        itinerary.append("🌍 ").append(days).append("-Day Itinerary for ").append(destination).append("\n");
+        itinerary.append("💰 Budget: ").append(budget).append("\n\n");
+        
+        for (int i = 1; i <= days; i++) {
+            itinerary.append("📅 Day ").append(i).append(":\n");
+            itinerary.append("🌅 Morning: Explore local attractions and have breakfast at a nearby café\n");
+            itinerary.append("☀️  Afternoon: Visit museums, markets, or natural landmarks\n");
+            itinerary.append("🌆 Evening: Enjoy dinner at a local restaurant and take a evening walk\n\n");
+        }
+        
+        itinerary.append("✨ Tips:\n");
+        itinerary.append("- Use public transportation for cost-effective travel\n");
+        itinerary.append("- Book accommodations in advance for better rates\n");
+        itinerary.append("- Try local cuisine to experience authentic culture\n");
+        itinerary.append("- Consider purchasing a local travel pass for attractions\n\n");
+        itinerary.append("💡 To enable real AI-powered itineraries, set your Gemini API key in application.properties");
+        
+        return itinerary.toString();
     }
 }
