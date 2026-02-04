@@ -1,14 +1,12 @@
-package com.travelitinerary;
+package com.travelitinerary;    
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @SpringBootApplication
-@ComponentScan(basePackages = {"com.travelitinerary", "com.service"})
 public class TripGenieApplication {
 
     public static void main(String[] args) {
@@ -23,7 +21,7 @@ public class TripGenieApplication {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/api/**") // Allow all paths starting with /api/
-                        .allowedOriginPatterns("http://localhost:*") // React ports with any port number
+                        .allowedOrigins("http://localhost:5173", "http://localhost:3000") // React ports
                         .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                         .allowedHeaders("*")
                         .allowCredentials(true);
