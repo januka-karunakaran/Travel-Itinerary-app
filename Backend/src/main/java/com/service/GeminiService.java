@@ -1,7 +1,5 @@
 package com.service;
 
-public package com.tripgenie.service;
-
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
@@ -50,6 +48,4 @@ public class GeminiService {
             return "Error: The AI Service is currently unavailable. Please try again later.";
         }
     }
-} {
-    
 }
