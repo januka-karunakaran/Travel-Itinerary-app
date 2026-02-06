@@ -12,7 +12,9 @@ public class GeminiService {
     @Value("${gemini.api.key}")
     private String apiKey;
 
-    private final String GEMINI_API_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=";
+    private static final String GEMINI_API_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=";
+    private static final String UNEXPECTED_RESPONSE_ERROR = "Error: The AI Service returned an unexpected response.";
+    private static final String NO_RESPONSE_ERROR = "Error: The AI Service returned no response. Please try again later.";
 
     public String getAIItinerary(String destination, int days, String budget) {
         RestTemplate restTemplate = new RestTemplate();
@@ -35,14 +37,43 @@ public class GeminiService {
 
         try {
             // 3. Make the POST request to the AI API
-            Map<String, Object> response = restTemplate.postForObject(url, requestBody, Map.class);
+            Map<?, ?> response = restTemplate.postForObject(url, requestBody, Map.class);
+            if (response == null) {
+                return NO_RESPONSE_ERROR;
+            }
 
             // 4. Navigate the nested JSON response to get the text
-            List candidates = (List) response.get("candidates");
-            Map content = (Map) ((Map) candidates.get(0)).get("content");
-            List parts = (List) content.get("parts");
+            Object candidatesObj = response.get("candidates");
+            if (!(candidatesObj instanceof List<?> candidates) || candidates.isEmpty()) {
+                return UNEXPECTED_RESPONSE_ERROR;
+            }
 
-            return (String) ((Map) parts.get(0)).get("text");
+            Object candidateObj = candidates.get(0);
+            if (!(candidateObj instanceof Map<?, ?> candidateMap)) {
+                return UNEXPECTED_RESPONSE_ERROR;
+            }
+
+            Object contentObj = candidateMap.get("content");
+            if (!(contentObj instanceof Map<?, ?> contentMap)) {
+                return UNEXPECTED_RESPONSE_ERROR;
+            }
+
+            Object partsObj = contentMap.get("parts");
+            if (!(partsObj instanceof List<?> parts) || parts.isEmpty()) {
+                return UNEXPECTED_RESPONSE_ERROR;
+            }
+
+            Object partObj = parts.get(0);
+            if (!(partObj instanceof Map<?, ?> partMap)) {
+                return UNEXPECTED_RESPONSE_ERROR;
+            }
+
+            Object textObj = partMap.get("text");
+            if (!(textObj instanceof String text)) {
+                return UNEXPECTED_RESPONSE_ERROR;
+            }
+
+            return text;
         } catch (Exception e) {
             e.printStackTrace();
             return "Error: The AI Service is currently unavailable. Please try again later.";

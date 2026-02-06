@@ -33,23 +33,25 @@ export default function Login() {
   };
 
   return (
-    <div className="auth-container">
-      <form onSubmit={handleLogin} className="auth-form">
-        <h2>TripGenie Login</h2>
+    <div className="auth-card">
+      <h2>TripGenie Login</h2>
+      <form onSubmit={handleLogin}>
         <input
           type="email"
           placeholder="Email"
           required
+          value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
         <input
           type="password"
           placeholder="Password"
           required
+          value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
         <button type="submit">Login</button>
-        <div className="links">
+        <div className="auth-links">
           <Link to="/signup">Create Account</Link>
           <Link to="/forgot-password">Forgot Password?</Link>
         </div>
