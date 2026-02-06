@@ -30,16 +30,22 @@ export default function Signup() {
 
         setLoading(true);
         try {
-            await signupUser(form);
+            const response = await signupUser(form);
+            console.log('Signup response:', response);
             alert("Account Created! Please Login.");
             navigate('/');
         } catch (err) {
             console.error('Signup error:', err);
+            console.error('Error response:', err.response);
             // For testing without backend, show a message
             if (err.code === 'ERR_NETWORK') {
                 setError('Backend not connected. Please ensure the server is running on port 8080.');
+            } else if (err.response?.data?.message) {
+                setError(err.response.data.message);
+            } else if (err.response?.data) {
+                setError(typeof err.response.data === 'string' ? err.response.data : "Signup failed. Please try again.");
             } else {
-                setError(err.response?.data?.message || "Signup failed. Please try again.");
+                setError("Signup failed. Please try again.");
             }
         } finally {
             setLoading(false);
