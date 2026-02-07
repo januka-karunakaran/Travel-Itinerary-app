@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate, Link } from "react-router-dom";
 
@@ -7,6 +7,11 @@ export default function Login() {
   const [password, setPassword] = useState("");
   const [rememberMe, setRememberMe] = useState(false);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    document.body.classList.add("auth-full");
+    return () => document.body.classList.remove("auth-full");
+  }, []);
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -40,27 +45,38 @@ export default function Login() {
   };
 
   return (
-    <div className="auth-shell">
+    <div className="auth-shell auth-shell--travel">
       <div className="auth-card-split">
-        <div className="auth-hero">
-          <div className="auth-hero-logo">TripGenie</div>
-          <h2>Hello, welcome!</h2>
-          <p>
-            Plan smarter trips with AI itineraries, curated experiences, and
-            personalized budgets.
-          </p>
+        <div className="auth-hero auth-hero--image">
+          <div className="auth-hero-content">
+            <div className="auth-hero-brand">TripGenie</div>
+            <h2>Travel that feels effortless</h2>
+            <p>
+              Curated routes, smart budgets, and local insights that make every
+              journey feel personal.
+            </p>
+            <span className="auth-hero-caption">
+              Travel is the only purchase that enriches you in ways beyond
+              material wealth.
+            </span>
+          </div>
         </div>
 
         <div className="auth-panel">
           <form onSubmit={handleLogin} className="auth-form">
-            <h2>TripGenie Login</h2>
+            <div className="auth-form-header">
+              <h1>Welcome</h1>
+              <p>Login with email</p>
+            </div>
+
             <div className="input-group">
-              <label htmlFor="email">Email address</label>
+              <label htmlFor="email">Email</label>
               <input
                 id="email"
                 type="email"
-                placeholder="name@mail.com"
+                placeholder="name@email.com"
                 required
+                value={email}
                 onChange={(e) => setEmail(e.target.value)}
               />
             </div>
@@ -69,8 +85,9 @@ export default function Login() {
               <input
                 id="password"
                 type="password"
-                placeholder="••••••••"
+                placeholder="Enter your password"
                 required
+                value={password}
                 onChange={(e) => setPassword(e.target.value)}
               />
             </div>
@@ -94,9 +111,9 @@ export default function Login() {
             </button>
 
             <div className="auth-footer">
-              <span>Not a member yet?</span>
+              <span>Do not have an account?</span>
               <Link to="/signup" className="primary-link">
-                Sign up
+                Register now
               </Link>
             </div>
           </form>

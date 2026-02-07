@@ -1,5 +1,6 @@
 import { useMemo, useState } from "react";
 import { generateTrip } from "../api/api";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function Home() {
   const [query, setQuery] = useState({
@@ -10,6 +11,7 @@ export default function Home() {
   const [itinerary, setItinerary] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  const navigate = useNavigate();
 
   const handlePlan = async () => {
     setLoading(true);
@@ -23,7 +25,16 @@ export default function Home() {
 
     try {
       const res = await generateTrip({ ...query, userId });
-      setItinerary(res.data.planText);
+      const planText = res.data.planText;
+      setItinerary(planText);
+      navigate("/plan", {
+        state: {
+          itinerary: planText,
+          destination: query.destination,
+          days: query.days,
+          budget: query.budget,
+        },
+      });
     } catch (err) {
       setError("Error: The AI Service is currently unavailable.");
     }
@@ -33,9 +44,17 @@ export default function Home() {
   const photoTiles = useMemo(() => {
     const destination = query.destination || "Destination";
     return [
-      { title: `${destination} skyline`, tone: "tone-sunrise" },
-      { title: `${destination} food`, tone: "tone-sand" },
-      { title: `${destination} culture`, tone: "tone-ocean" },
+      {
+        title: `${destination} skyline`,
+        tone: "tone-sunrise",
+        route: "/skyline",
+      },
+      { title: `${destination} food`, tone: "tone-sand", route: "/food" },
+      {
+        title: `${destination} culture`,
+        tone: "tone-ocean",
+        route: "/culture",
+      },
     ];
   }, [query.destination]);
 
@@ -99,9 +118,13 @@ export default function Home() {
         <div className="home-output">
           <div className="photo-strip">
             {photoTiles.map((photo, index) => (
-              <div key={index} className={`photo-tile ${photo.tone}`}>
+              <Link
+                key={index}
+                to={photo.route}
+                className={`photo-tile ${photo.tone} photo-tile-link`}
+              >
                 <span>{photo.title}</span>
-              </div>
+              </Link>
             ))}
           </div>
           <div className="plan-preview">

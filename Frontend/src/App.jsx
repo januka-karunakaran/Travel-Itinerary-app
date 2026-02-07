@@ -1,4 +1,9 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  useLocation,
+} from "react-router-dom";
 import Navbar from "./components/Navbar";
 import ProtectedRoute from "./components/ProtectedRoute";
 import Login from "./pages/Login";
@@ -6,12 +11,20 @@ import Signup from "./pages/Signup";
 import ForgotPassword from "./pages/ForgotPassword";
 import Home from "./pages/Home";
 import MyTrips from "./pages/MyTrips";
+import Plan from "./pages/Plan";
+import Skyline from "./pages/Skyline";
+import Food from "./pages/Food";
+import Culture from "./pages/Culture";
 
-function App() {
+function AppLayout() {
+  const location = useLocation();
+  const hideNavbar = ["/", "/signup", "/forgot-password"].includes(
+    location.pathname,
+  );
+
   return (
-    <Router>
-      {/* Navbar stays at the top of every page */}
-      <Navbar />
+    <>
+      {!hideNavbar && <Navbar />}
 
       <div className="main-content">
         <Routes>
@@ -37,8 +50,48 @@ function App() {
               </ProtectedRoute>
             }
           />
+          <Route
+            path="/plan"
+            element={
+              <ProtectedRoute>
+                <Plan />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/skyline"
+            element={
+              <ProtectedRoute>
+                <Skyline />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/food"
+            element={
+              <ProtectedRoute>
+                <Food />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/culture"
+            element={
+              <ProtectedRoute>
+                <Culture />
+              </ProtectedRoute>
+            }
+          />
         </Routes>
       </div>
+    </>
+  );
+}
+
+function App() {
+  return (
+    <Router>
+      <AppLayout />
     </Router>
   );
 }
