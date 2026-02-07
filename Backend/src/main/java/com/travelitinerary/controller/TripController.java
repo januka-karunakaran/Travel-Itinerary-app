@@ -3,7 +3,6 @@ package com.travelitinerary.controller;
 import com.travelitinerary.model.Itinerary;
 import com.travelitinerary.repository.TripRepository;
 import com.travelitinerary.service.GeminiService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
@@ -11,8 +10,13 @@ import java.util.List;
 @RequestMapping("/api/trips")
 public class TripController {
 
-    @Autowired private GeminiService geminiService;
-    @Autowired private TripRepository tripRepository;
+    private final GeminiService geminiService;
+    private final TripRepository tripRepository;
+
+    public TripController(GeminiService geminiService, TripRepository tripRepository) {
+        this.geminiService = geminiService;
+        this.tripRepository = tripRepository;
+    }
 
     @PostMapping("/generate")
     public Itinerary generate(@RequestBody Itinerary tripRequest) {

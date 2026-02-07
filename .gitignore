@@ -1,0 +1,4 @@
+Backend/target/
+*.class
+*.log
+.vscode/
