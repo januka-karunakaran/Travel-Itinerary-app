@@ -18,7 +18,7 @@ export const districts = [
         coordinates: { lat: 6.9271, lng: 79.8466 },
         googleMapsLink: "https://maps.google.com/?q=Galle+Face+Green+Colombo",
         images: [
-          "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Galle_Face_Green_Colombo_Sri_Lanka.jpg/1200px-Galle_Face_Green_Colombo_Sri_Lanka.jpg",
+          "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Colombo_-_Galle_Face.jpg/500px-Colombo_-_Galle_Face.jpg",
           "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0f/2b/4a/4c/galle-face-green.jpg",
         ],
         bestTimeToVisit: "November to March",
@@ -34,7 +34,7 @@ export const districts = [
         coordinates: { lat: 6.9098, lng: 79.8607 },
         googleMapsLink: "https://maps.google.com/?q=National+Museum+Colombo",
         images: [
-          "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Colombo_National_Museum.jpg/1200px-Colombo_National_Museum.jpg",
+          "https://media.gettyimages.com/id/2213743003/photo/colombo-national-museum-sri-lanka.jpg?s=2048x2048&w=gi&k=20&c=FXPybrOZMbKcvj4JAQyT652V7EZzwLi2ZLWQGu9zrBw=",
         ],
         bestTimeToVisit: "Year-round",
         duration: "2-3 hours",
@@ -49,7 +49,7 @@ export const districts = [
         coordinates: { lat: 6.9167, lng: 79.8562 },
         googleMapsLink: "https://maps.google.com/?q=Gangaramaya+Temple+Colombo",
         images: [
-          "https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Gangaramaya_Temple.jpg/1200px-Gangaramaya_Temple.jpg",
+          "https://i0.wp.com/albinger.me/wp-content/uploads/2014/12/seema-malaka-on-beiralake-in-colombo.jpg?ssl=1",
         ],
         bestTimeToVisit: "Year-round",
         duration: "1-2 hours",
@@ -65,7 +65,7 @@ export const districts = [
         googleMapsLink:
           "https://maps.google.com/?q=Independence+Square+Colombo",
         images: [
-          "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Independence_Memorial_Hall.jpg/1200px-Independence_Memorial_Hall.jpg",
+          "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0b/5e/c6/b9/de-hal-gezien-vanaf-de.jpg?w=1400&h=800&s=1",
         ],
         bestTimeToVisit: "Year-round",
         duration: "1 hour",
@@ -90,7 +90,7 @@ export const districts = [
         coordinates: { lat: 7.2934, lng: 80.6411 },
         googleMapsLink: "https://maps.google.com/?q=Temple+of+the+Tooth+Kandy",
         images: [
-          "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Temple_of_the_Tooth.jpg/1200px-Temple_of_the_Tooth.jpg",
+          "https://www.ceylonexpeditions.com/medias/destination_places/big/106/temple-of-the-sacred-tooth-relic-kandy.jpg",
           "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0f/d5/88/0a/sacred-tooth-relic.jpg",
         ],
         bestTimeToVisit: "July-August (Esala Perahera festival)",
@@ -107,7 +107,7 @@ export const districts = [
         googleMapsLink:
           "https://maps.google.com/?q=Peradeniya+Botanical+Gardens",
         images: [
-          "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Peradeniya_botanical_garden.jpg/1200px-Peradeniya_botanical_garden.jpg",
+          "https://for91days.com/photos/SriLanka/Royal%20Botanical%20Gardens%20of%20Peradeniya/Botanical-Gardens-of-Peradeniya.jpg",
         ],
         bestTimeToVisit: "Year-round",
         duration: "2-4 hours",
@@ -122,7 +122,7 @@ export const districts = [
         coordinates: { lat: 7.2906, lng: 80.6337 },
         googleMapsLink: "https://maps.google.com/?q=Kandy+Lake",
         images: [
-          "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Kandy_lake_house.jpg/1200px-Kandy_lake_house.jpg",
+          "https://srilankaexplorers.com/wp-content/uploads/2024/05/1_UTMYLJ4O9xJS89SazTUBLw.jpg",
         ],
         bestTimeToVisit: "Year-round",
         duration: "1-2 hours",
@@ -138,7 +138,7 @@ export const districts = [
         googleMapsLink:
           "https://maps.google.com/?q=Bahirawakanda+Buddha+Statue+Kandy",
         images: [
-          "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0d/9c/8e/1a/bahirawakanda-vihara.jpg",
+          "https://www.lovidhu.com/uploads/posts/2021/05//bahirawakanda-temple-sri-lanka-945x630.jpg",
         ],
         bestTimeToVisit: "Year-round",
         duration: "1 hour",
@@ -163,7 +163,7 @@ export const districts = [
         coordinates: { lat: 6.0267, lng: 80.217 },
         googleMapsLink: "https://maps.google.com/?q=Galle+Fort+Sri+Lanka",
         images: [
-          "https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Galle_Fort_-_panoramio.jpg/1200px-Galle_Fort_-_panoramio.jpg",
+          "https://do6raq9h04ex.cloudfront.net/sites/8/2021/07/galle-fort-1050x700-1.jpg",
           "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/15/4d/46/3c/galle-fort.jpg",
         ],
         bestTimeToVisit: "November to April",
@@ -179,7 +179,7 @@ export const districts = [
         coordinates: { lat: 6.0099, lng: 80.2487 },
         googleMapsLink: "https://maps.google.com/?q=Unawatuna+Beach",
         images: [
-          "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Unawatuna_beach.jpg/1200px-Unawatuna_beach.jpg",
+          "https://www.wondersofceylon.com/content/images/2024/01/WoC-Unawatuna-Beach-Featured.webp",
         ],
         bestTimeToVisit: "November to April",
         duration: "Half day to full day",
@@ -195,7 +195,7 @@ export const districts = [
         googleMapsLink:
           "https://maps.google.com/?q=Japanese+Peace+Pagoda+Unawatuna",
         images: [
-          "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0b/4a/9f/31/japanese-peace-pagoda.jpg",
+          "https://www.lovesrilanka.org/wp-content/uploads/2020/04/Japanese-Peace-Pagoda-1920.jpg",
         ],
         bestTimeToVisit: "Year-round",
         duration: "1-2 hours",
@@ -221,7 +221,7 @@ export const districts = [
         googleMapsLink:
           "https://maps.google.com/?q=Horton+Plains+National+Park",
         images: [
-          "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/World%27s_End_Horton_Plains.jpg/1200px-World%27s_End_Horton_Plains.jpg",
+          "https://www.lovesrilanka.org/wp-content/uploads/2020/04/Horton-Plains-National-Park-1920.jpg",
         ],
         bestTimeToVisit: "January to March",
         duration: "4-5 hours",
@@ -236,7 +236,7 @@ export const districts = [
         coordinates: { lat: 6.9536, lng: 80.7657 },
         googleMapsLink: "https://maps.google.com/?q=Gregory+Lake+Nuwara+Eliya",
         images: [
-          "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Gregory_Lake.jpg/1200px-Gregory_Lake.jpg",
+          "https://www.honeymoonguidesrilanka.com/wp-content/uploads/2024/08/Lake-Gregory-Park-1920x600-1.jpg",
         ],
         bestTimeToVisit: "Year-round",
         duration: "2-3 hours",
@@ -252,7 +252,7 @@ export const districts = [
         googleMapsLink:
           "https://maps.google.com/?q=Pedro+Tea+Estate+Nuwara+Eliya",
         images: [
-          "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0d/e5/0a/3c/pedro-tea-estate.jpg",
+          "https://cdn.forevervacation.com/uploads/digital/assets/pedro-tea-estate.png?tr=w-1235,h-354",
         ],
         bestTimeToVisit: "Year-round",
         duration: "1-2 hours",
@@ -267,7 +267,7 @@ export const districts = [
         coordinates: { lat: 6.9688, lng: 80.7644 },
         googleMapsLink: "https://maps.google.com/?q=Victoria+Park+Nuwara+Eliya",
         images: [
-          "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/09/cc/2d/08/victoria-park.jpg",
+          "https://www.flamingotravels.net/_next/image?url=https%3A%2F%2Fimgcdn.flamingotravels.co.in%2FImages%2FPlacesOfInterest%2FThe-Victoria-Park-Nuwara%20Eliya-Sri-Lanka-Places-To-Visit-Intrest-3.jpg&w=1080&q=90",
         ],
         bestTimeToVisit: "Year-round",
         duration: "1-2 hours",
@@ -293,7 +293,7 @@ export const districts = [
         googleMapsLink:
           "https://maps.google.com/?q=Sri+Maha+Bodhi+Anuradhapura",
         images: [
-          "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Sacred_Jaya_Sri_Maha_Bodhi.jpg/1200px-Sacred_Jaya_Sri_Maha_Bodhi.jpg",
+          "https://tropicallifedambulla.com/wp-content/uploads/2019/07/jayasrimahabodi2.jpg",
         ],
         bestTimeToVisit: "Year-round",
         duration: "1 hour",
@@ -308,7 +308,7 @@ export const districts = [
         coordinates: { lat: 8.3493, lng: 80.3964 },
         googleMapsLink: "https://maps.google.com/?q=Ruwanwelisaya+Anuradhapura",
         images: [
-          "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Ruwanwelisaya.jpg/1200px-Ruwanwelisaya.jpg",
+          "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1b/ea/a4/e8/ruwanwelisaya-temple.jpg?w=800&h=-1&s=1",
         ],
         bestTimeToVisit: "Year-round",
         duration: "1-2 hours",
@@ -323,9 +323,7 @@ export const districts = [
         coordinates: { lat: 8.3554, lng: 80.4017 },
         googleMapsLink:
           "https://maps.google.com/?q=Jetavanaramaya+Anuradhapura",
-        images: [
-          "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Jetavanaramaya_stupa.jpg/1200px-Jetavanaramaya_stupa.jpg",
-        ],
+        images: ["https://cdn.lakpura.com/images/LK94009853-01-E.JPG"],
         bestTimeToVisit: "Year-round",
         duration: "1 hour",
         entranceFee: "USD 25 (main site ticket)",
@@ -348,9 +346,7 @@ export const districts = [
         category: "Religious",
         coordinates: { lat: 7.9561, lng: 81.0071 },
         googleMapsLink: "https://maps.google.com/?q=Gal+Vihara+Polonnaruwa",
-        images: [
-          "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Gal_Vihara_1.jpg/1200px-Gal_Vihara_1.jpg",
-        ],
+        images: ["https://cdn.lakpura.com/images/LK94009888-01-E-239-150.JPG"],
         bestTimeToVisit: "Year-round",
         duration: "1 hour",
         entranceFee: "USD 25 (main site ticket)",
@@ -365,7 +361,7 @@ export const districts = [
         googleMapsLink:
           "https://maps.google.com/?q=Parakrama+Samudra+Polonnaruwa",
         images: [
-          "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Parakrama_Samudra.jpg/1200px-Parakrama_Samudra.jpg",
+          "https://www.wondersofceylon.com/content/images/2024/01/WoC-Parakrama-Samudraya-Featured.png",
         ],
         bestTimeToVisit: "Year-round",
         duration: "1-2 hours",
@@ -380,7 +376,7 @@ export const districts = [
         coordinates: { lat: 7.9475, lng: 81.0062 },
         googleMapsLink: "https://maps.google.com/?q=Royal+Palace+Polonnaruwa",
         images: [
-          "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0d/26/91/3c/royal-palace.jpg",
+          "https://orientalarchitecture.com/gallery/sri-lanka/polonnaruwa/parakramabahu-royal-palace/thumbs/parakramabahu_royal-palace03thumb.jpg",
         ],
         bestTimeToVisit: "Year-round",
         duration: "1 hour",
@@ -405,7 +401,7 @@ export const districts = [
         coordinates: { lat: 9.6631, lng: 80.007 },
         googleMapsLink: "https://maps.google.com/?q=Jaffna+Fort",
         images: [
-          "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Jaffna_Fort.jpg/1200px-Jaffna_Fort.jpg",
+          "https://www.lovesrilanka.org/wp-content/uploads/2020/04/Jaffna-Fort-1920.jpg",
         ],
         bestTimeToVisit: "November to March",
         duration: "1-2 hours",
@@ -420,7 +416,7 @@ export const districts = [
         coordinates: { lat: 9.6833, lng: 80.0261 },
         googleMapsLink: "https://maps.google.com/?q=Nallur+Kandaswamy+Temple",
         images: [
-          "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Nallur_Temple.jpg/1200px-Nallur_Temple.jpg",
+          "https://www.talesofceylon.com/wp-content/uploads/2019/10/Nallur-Kandaswamy-Kovil_1920x700.jpg",
         ],
         bestTimeToVisit: "July-August (festival time)",
         duration: "1-2 hours",
@@ -435,7 +431,7 @@ export const districts = [
         coordinates: { lat: 9.7661, lng: 80.0492 },
         googleMapsLink: "https://maps.google.com/?q=Casuarina+Beach+Jaffna",
         images: [
-          "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0d/5c/7e/2a/casuarina-beach.jpg",
+          "https://static.wixstatic.com/media/ba255b_eabd6286129d47e09667ef77beb35b0b~mv2.jpg/v1/fill/w_1176,h_984,al_c,q_85,enc_auto/ba255b_eabd6286129d47e09667ef77beb35b0b~mv2.jpg",
         ],
         bestTimeToVisit: "November to March",
         duration: "2-4 hours",
@@ -461,7 +457,7 @@ export const districts = [
         googleMapsLink:
           "https://maps.google.com/?q=Koneswaram+Temple+Trincomalee",
         images: [
-          "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Koneswaram_temple.jpg/1200px-Koneswaram_temple.jpg",
+          "https://www.ceylonexpeditions.com/medias/destination_places/big/78/thirukoneswaram-temple-trincomalee-sri-lanka-ramayana-tour-ceylon-expeditions-8.jpg",
         ],
         bestTimeToVisit: "March to October",
         duration: "1-2 hours",
@@ -475,9 +471,7 @@ export const districts = [
         category: "Beach",
         coordinates: { lat: 8.6833, lng: 81.1833 },
         googleMapsLink: "https://maps.google.com/?q=Nilaveli+Beach",
-        images: [
-          "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Nilaveli_Beach.jpg/1200px-Nilaveli_Beach.jpg",
-        ],
+        images: ["https://1001beach.com/img/posts/2125/1200/nilaveli-1.webp"],
         bestTimeToVisit: "March to October",
         duration: "Half day to full day",
         entranceFee: "Free",
@@ -492,7 +486,7 @@ export const districts = [
         googleMapsLink:
           "https://maps.google.com/?q=Pigeon+Island+National+Park",
         images: [
-          "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0e/3f/8c/0a/pigeon-island.jpg",
+          "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/16/0c/b8/01/getlstd-property-photo.jpg?w=1000&h=600&s=1",
         ],
         bestTimeToVisit: "April to September",
         duration: "3-4 hours",
@@ -517,7 +511,7 @@ export const districts = [
         coordinates: { lat: 6.3724, lng: 81.5103 },
         googleMapsLink: "https://maps.google.com/?q=Yala+National+Park",
         images: [
-          "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Yala_National_Park_Leopard.jpg/1200px-Yala_National_Park_Leopard.jpg",
+          "https://media-cdn.tripadvisor.com/media/attractions-splice-spp-674x446/09/f2/0f/25.jpg",
           "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/10/5d/0a/0d/yala-national-park.jpg",
         ],
         bestTimeToVisit: "February to July",
@@ -533,7 +527,7 @@ export const districts = [
         coordinates: { lat: 6.1958, lng: 81.2028 },
         googleMapsLink: "https://maps.google.com/?q=Bundala+National+Park",
         images: [
-          "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Bundala_National_Park.jpg/1200px-Bundala_National_Park.jpg",
+          "https://nexttravelsrilanka.com/wp-content/uploads/2021/05/White-Greater-flamingos-in-a-swamp-by-a-lawn-at-Bundala-National-Park-the-Wonderful-Land-of-Birds-in-Sri-Lanka.jpg",
         ],
         bestTimeToVisit: "September to March",
         duration: "Half day",
@@ -548,7 +542,7 @@ export const districts = [
         coordinates: { lat: 6.0244, lng: 80.7969 },
         googleMapsLink: "https://maps.google.com/?q=Tangalle+Beach",
         images: [
-          "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0f/8b/3c/1a/tangalle-beach.jpg",
+          "https://nexttravelsrilanka.com/wp-content/uploads/2023/02/Tangalle.jpg",
         ],
         bestTimeToVisit: "November to April",
         duration: "Half day to full day",

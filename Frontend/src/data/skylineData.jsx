@@ -11,7 +11,7 @@ export const skylineAttractions = [
     coordinates: { lat: 6.9271, lng: 79.8612 },
     googleMapsLink: "https://maps.google.com/?q=Lotus+Tower+Colombo",
     images: [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Lotus_Tower_Colombo.jpg/1200px-Lotus_Tower_Colombo.jpg",
+      "https://colombolotustower.lk/wp-content/uploads/2022/09/wp6830758-lotus-tower-wallpapers-1.jpg",
       "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/16/8a/3c/1a/lotus-tower.jpg",
     ],
     highlights: [
@@ -38,7 +38,7 @@ export const skylineAttractions = [
     coordinates: { lat: 7.25, lng: 80.6167 },
     googleMapsLink: "https://maps.google.com/?q=Ambuluwawa+Tower",
     images: [
-      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0f/8d/5c/2a/ambuluwawa-tower.jpg",
+      "https://ambuluwawa.com/wp-content/uploads/2024/06/Firefly-20240617204232-1-1024x1024.webp",
       "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/15/3a/2c/1f/spiral-tower.jpg",
     ],
     highlights: [
@@ -64,7 +64,7 @@ export const skylineAttractions = [
     coordinates: { lat: 7.957, lng: 80.7603 },
     googleMapsLink: "https://maps.google.com/?q=Sigiriya+Rock+Fortress",
     images: [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Sigiriya.jpg/1200px-Sigiriya.jpg",
+      "https://cdn.prod.website-files.com/6364d88dd010ce5c6f8aa8fc/66b2174c29312e5c39c05171_66b21545597a73f9cec541de_sigiriya-rock-lionspaw-sideview.jpeg",
       "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0d/5a/3c/2a/sigiriya-view.jpg",
     ],
     highlights: [
@@ -90,7 +90,7 @@ export const skylineAttractions = [
     coordinates: { lat: 7.9667, lng: 80.7594 },
     googleMapsLink: "https://maps.google.com/?q=Pidurangala+Rock",
     images: [
-      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/10/5c/3d/2a/pidurangala-view.jpg",
+      "https://waybird.imgix.net/experiences/kodak_images/000/015/931/original/Hike_to_the_top_of_Pidurangala_Rock_1.jpg?q=50&auto=format&crop=fill&w=1024&h=683",
       "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/View_from_Pidurangala.jpg/1200px-View_from_Pidurangala.jpg",
     ],
     highlights: [
@@ -115,9 +115,7 @@ export const skylineAttractions = [
     elevation: "600 meters",
     coordinates: { lat: 7.2847, lng: 80.638 },
     googleMapsLink: "https://maps.google.com/?q=Arthurs+Seat+Kandy",
-    images: [
-      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0c/8a/4c/2a/kandy-viewpoint.jpg",
-    ],
+    images: ["https://djpadb6zmchmi.cloudfront.net/2020/05/4093-banner.jpg"],
     highlights: [
       "Kandy city panorama",
       "Kandy Lake views",
@@ -141,7 +139,7 @@ export const skylineAttractions = [
     coordinates: { lat: 6.0267, lng: 80.217 },
     googleMapsLink: "https://maps.google.com/?q=Galle+Fort+Ramparts",
     images: [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Galle_Fort_-_panoramio.jpg/1200px-Galle_Fort_-_panoramio.jpg",
+      "https://c7.alamy.com/comp/AP7MBH/views-of-ramparts-galle-fort-sri-lanka-AP7MBH.jpg",
       "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/15/4d/46/3c/ramparts-walk.jpg",
     ],
     highlights: [
@@ -167,7 +165,7 @@ export const skylineAttractions = [
     coordinates: { lat: 6.8667, lng: 81.05 },
     googleMapsLink: "https://maps.google.com/?q=Little+Adams+Peak+Ella",
     images: [
-      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0f/6a/5c/3a/little-adams-peak.jpg",
+      "https://nerdnomads.com/wp-content/uploads/DSC5219.jpg",
       "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Ella_Gap_view.jpg/1200px-Ella_Gap_view.jpg",
     ],
     highlights: [
@@ -194,7 +192,7 @@ export const skylineAttractions = [
     coordinates: { lat: 6.8069, lng: 80.7986 },
     googleMapsLink: "https://maps.google.com/?q=Worlds+End+Horton+Plains",
     images: [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/World%27s_End_Horton_Plains.jpg/1200px-World%27s_End_Horton_Plains.jpg",
+      "https://digitaltravelcouple.com/wp-content/uploads/2020/01/worlds-end-horton-plains-1.jpg",
       "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/10/3a/5c/2a/worlds-end-view.jpg",
     ],
     highlights: [
@@ -220,7 +218,7 @@ export const skylineAttractions = [
     coordinates: { lat: 7.2847, lng: 80.638 },
     googleMapsLink: "https://maps.google.com/?q=Bahirawakanda+Buddha+Statue",
     images: [
-      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0d/9c/8e/1a/bahirawakanda-vihara.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/1/19/Sri_Maha_Bodhi_Vihara_Statue.jpg",
     ],
     highlights: [
       "88-foot Buddha statue",
@@ -244,7 +242,7 @@ export const skylineAttractions = [
     coordinates: { lat: 6.9271, lng: 79.8466 },
     googleMapsLink: "https://maps.google.com/?q=Galle+Face+Green+Colombo",
     images: [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Galle_Face_Green_Colombo_Sri_Lanka.jpg/1200px-Galle_Face_Green_Colombo_Sri_Lanka.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Colombo_-_Galle_Face.jpg/500px-Colombo_-_Galle_Face.jpg",
       "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0f/2b/4a/4c/colombo-skyline.jpg",
     ],
     highlights: [
