@@ -567,7 +567,7 @@ export const districts = [
         coordinates: { lat: 6.8095, lng: 80.4989 },
         googleMapsLink: "https://maps.google.com/?q=Adams+Peak+Sri+Lanka",
         images: [
-          "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Adam%27s_Peak.jpg/1200px-Adam%27s_Peak.jpg",
+          "https://www.ceylonexpeditions.com/medias/media/big/884/whatsapp-image-2024-12-25-at-06-40-53-2.jpeg",
         ],
         bestTimeToVisit: "December to May",
         duration: "6-8 hours (round trip climb)",
@@ -582,7 +582,7 @@ export const districts = [
         coordinates: { lat: 6.4007, lng: 80.4006 },
         googleMapsLink: "https://maps.google.com/?q=Sinharaja+Forest+Reserve",
         images: [
-          "https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Sinharaja_Forest.jpg/1200px-Sinharaja_Forest.jpg",
+          "https://www.greenholidaytravels.com/wp-content/uploads/2024/07/Si2.jpg",
         ],
         bestTimeToVisit: "January to April, August to September",
         duration: "Full day",
@@ -597,7 +597,7 @@ export const districts = [
         coordinates: { lat: 6.6828, lng: 80.4017 },
         googleMapsLink: "https://maps.google.com/?q=Gem+Museum+Ratnapura",
         images: [
-          "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/09/5c/2a/1b/gem-mining.jpg",
+          "https://soulsrilanka.com/image/experiences/visit-a-gem-mine/01.jpg",
         ],
         bestTimeToVisit: "Year-round",
         duration: "2-3 hours",
@@ -622,7 +622,7 @@ export const districts = [
         coordinates: { lat: 7.5561, lng: 80.6156 },
         googleMapsLink: "https://maps.google.com/?q=Aluvihara+Rock+Temple",
         images: [
-          "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0d/3a/5b/1c/aluvihara-rock-temple.jpg",
+          "https://upload.wikimedia.org/wikipedia/commons/8/8b/Matale_aluviharaya.jpg",
         ],
         bestTimeToVisit: "Year-round",
         duration: "1-2 hours",
@@ -636,9 +636,7 @@ export const districts = [
         category: "Nature",
         coordinates: { lat: 7.45, lng: 80.7833 },
         googleMapsLink: "https://maps.google.com/?q=Knuckles+Mountain+Range",
-        images: [
-          "https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Knuckles_Mountain_Range.jpg/1200px-Knuckles_Mountain_Range.jpg",
-        ],
+        images: ["https://cdn.lakpura.com/images/LK94009828-01-E.JPG"],
         bestTimeToVisit: "January to April",
         duration: "Full day or multi-day trek",
         entranceFee: "LKR 1000 + guide charges",
@@ -651,9 +649,7 @@ export const districts = [
         category: "Nature",
         coordinates: { lat: 7.2833, lng: 80.75 },
         googleMapsLink: "https://maps.google.com/?q=Sembuwatta+Lake",
-        images: [
-          "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0f/1c/3d/2a/sembuwatta-lake.jpg",
-        ],
+        images: ["https://cdn.lakpura.com/images/LK94009697-01-E.JPG"],
         bestTimeToVisit: "Year-round",
         duration: "2-3 hours",
         entranceFee: "LKR 500",
@@ -677,7 +673,7 @@ export const districts = [
         coordinates: { lat: 7.2333, lng: 79.85 },
         googleMapsLink: "https://maps.google.com/?q=Negombo+Beach",
         images: [
-          "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0d/9a/1c/3f/negombo-beach.jpg",
+          "https://www.talesofceylon.com/wp-content/uploads/2019/10/Negombo_1920x700.jpg",
         ],
         bestTimeToVisit: "November to April",
         duration: "Half day to full day",
@@ -692,7 +688,7 @@ export const districts = [
         coordinates: { lat: 6.9553, lng: 79.9219 },
         googleMapsLink: "https://maps.google.com/?q=Kelaniya+Temple",
         images: [
-          "https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Kelaniya_Temple.jpg/1200px-Kelaniya_Temple.jpg",
+          "https://www.srilankanexpeditions.co.uk/images/main_slider/sri-lanka-guide-destinations/kelaniya-raja-maha-vihara/01.jpg",
         ],
         bestTimeToVisit: "Year-round",
         duration: "1-2 hours",
@@ -708,7 +704,7 @@ export const districts = [
         googleMapsLink:
           "https://maps.google.com/?q=Henarathgoda+Botanical+Garden",
         images: [
-          "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/08/7c/1d/3a/henarathgoda-botanical.jpg",
+          "https://www.ceylonexpeditions.com/medias/destination_places/big/35/gampaha-henarathgoda-botanical-garden-5c7a2-1.jpg",
         ],
         bestTimeToVisit: "Year-round",
         duration: "2-3 hours",
@@ -733,7 +729,7 @@ export const districts = [
         coordinates: { lat: 6.5833, lng: 79.9667 },
         googleMapsLink: "https://maps.google.com/?q=Kalutara+Bodhiya",
         images: [
-          "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0d/2a/5c/1f/kalutara-temple.jpg",
+          "https://www.travelmapsrilanka.com/destinations/destinationimages/kalutara-bodhiya-in-sri-lanka.webp",
         ],
         bestTimeToVisit: "Year-round",
         duration: "1 hour",
@@ -748,7 +744,7 @@ export const districts = [
         coordinates: { lat: 6.6, lng: 80.0167 },
         googleMapsLink: "https://maps.google.com/?q=Richmond+Castle+Kalutara",
         images: [
-          "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Richmond_Castle_Kalutara.jpg/1200px-Richmond_Castle_Kalutara.jpg",
+          "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/14/f9/7e/66/richmond-castle-at-palatota.jpg?w=1000&h=600&s=1",
         ],
         bestTimeToVisit: "Year-round",
         duration: "1-2 hours",
@@ -763,7 +759,7 @@ export const districts = [
         coordinates: { lat: 6.65, lng: 80.05 },
         googleMapsLink: "https://maps.google.com/?q=Brief+Garden+Kalutara",
         images: [
-          "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0c/5b/2c/1a/brief-garden.jpg",
+          "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0f/67/23/4d/imag1109-largejpg.jpg?w=2000&h=-1&s=1",
         ],
         bestTimeToVisit: "Year-round",
         duration: "1-2 hours",
@@ -788,7 +784,7 @@ export const districts = [
         coordinates: { lat: 5.9239, lng: 80.5881 },
         googleMapsLink: "https://maps.google.com/?q=Dondra+Head+Lighthouse",
         images: [
-          "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Dondra_lighthouse.jpg/1200px-Dondra_lighthouse.jpg",
+          "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/21/e6/c3/91/dondra-light-house-sri.jpg?w=800&h=400&s=1",
         ],
         bestTimeToVisit: "November to April",
         duration: "1-2 hours",
@@ -803,7 +799,7 @@ export const districts = [
         coordinates: { lat: 5.945, lng: 80.5489 },
         googleMapsLink: "https://maps.google.com/?q=Polhena+Beach+Matara",
         images: [
-          "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0d/7c/5a/2f/polhena-beach.jpg",
+          "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/16/81/88/25/img-20190215-103150-largejpg.jpg?w=700&h=400&s=1",
         ],
         bestTimeToVisit: "November to April",
         duration: "Half day",
@@ -818,7 +814,7 @@ export const districts = [
         coordinates: { lat: 5.9667, lng: 80.5333 },
         googleMapsLink: "https://maps.google.com/?q=Weherahena+Temple+Matara",
         images: [
-          "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0b/3c/1d/2a/weherahena-temple.jpg",
+          "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2e/9b/df/40/caption.jpg?w=1400&h=800&s=1",
         ],
         bestTimeToVisit: "Year-round",
         duration: "1-2 hours",
@@ -843,7 +839,7 @@ export const districts = [
         coordinates: { lat: 7.7167, lng: 81.7 },
         googleMapsLink: "https://maps.google.com/?q=Batticaloa+Fort",
         images: [
-          "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Batticaloa_Fort.jpg/1200px-Batticaloa_Fort.jpg",
+          "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/10/10/93/3c/batticaloa-fort.jpg?w=1400&h=800&s=1",
         ],
         bestTimeToVisit: "April to September",
         duration: "1 hour",
@@ -858,7 +854,7 @@ export const districts = [
         coordinates: { lat: 7.7333, lng: 81.7167 },
         googleMapsLink: "https://maps.google.com/?q=Kallady+Beach+Batticaloa",
         images: [
-          "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0e/5d/3c/1a/kallady-beach.jpg",
+          "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/09/37/6f/13/kallady-beach.jpg?w=1400&h=800&s=1",
         ],
         bestTimeToVisit: "April to September",
         duration: "2-4 hours",
@@ -873,7 +869,7 @@ export const districts = [
         coordinates: { lat: 7.9333, lng: 81.55 },
         googleMapsLink: "https://maps.google.com/?q=Pasikudah+Beach",
         images: [
-          "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Pasikuda_Beach.jpg/1200px-Pasikuda_Beach.jpg",
+          "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/19/cb/d8/d8/pasikudah-beach-you-would.jpg?w=1400&h=800&s=1",
         ],
         bestTimeToVisit: "April to September",
         duration: "Half day to full day",
@@ -898,8 +894,7 @@ export const districts = [
         coordinates: { lat: 6.8417, lng: 81.8361 },
         googleMapsLink: "https://maps.google.com/?q=Arugam+Bay",
         images: [
-          "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Arugam_Bay_Beach.jpg/1200px-Arugam_Bay_Beach.jpg",
-          "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/10/4c/2d/3a/arugam-bay-surfing.jpg",
+          "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/15/f8/5f/0f/beach.jpg?w=700&h=400&s=1",
         ],
         bestTimeToVisit: "May to September (surfing season)",
         duration: "Full day or multi-day",
@@ -914,7 +909,7 @@ export const districts = [
         coordinates: { lat: 6.5667, lng: 81.6833 },
         googleMapsLink: "https://maps.google.com/?q=Kumana+National+Park",
         images: [
-          "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0d/4b/2c/1f/kumana-national-park.jpg",
+          "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0d/51/3a/2e/birds-at-kumana.jpg?w=1400&h=800&s=1",
         ],
         bestTimeToVisit: "April to July",
         duration: "Half day safari",
@@ -929,7 +924,7 @@ export const districts = [
         coordinates: { lat: 7.1667, lng: 81.6833 },
         googleMapsLink: "https://maps.google.com/?q=Deegavapi+Stupa",
         images: [
-          "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0c/1d/3e/2f/deegavapi.jpg",
+          "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/12/b2/60/8c/img-20180419-161303-largejpg.jpg?w=1100&h=600&s=1",
         ],
         bestTimeToVisit: "Year-round",
         duration: "1 hour",
