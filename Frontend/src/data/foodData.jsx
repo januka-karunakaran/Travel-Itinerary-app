@@ -352,7 +352,7 @@ export const foodExperiences = [
     spiceLevel: "None (sweet and spiced)",
     dietaryInfo: "Vegetarian",
     images: [
-      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0d/6a/5c/2a/watalappan.jpg",
+      "https://www.grandchancellor.lk/wp-content/uploads/2021/11/010-1024x683.jpg",
       "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Watalappan_Dessert.jpg/1200px-Watalappan_Dessert.jpg",
     ],
     ingredients: [
@@ -400,7 +400,7 @@ export const foodExperiences = [
     spiceLevel: "Mild (accompaniments vary)",
     dietaryInfo: "Vegan (plain)",
     images: [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Pittu_Sri_Lanka.jpg/1200px-Pittu_Sri_Lanka.jpg",
+      "https://cdn.lakpura.com/images/LK94007675-04-E.JPG",
       "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0e/5a/4c/2a/pittu.jpg",
     ],
     ingredients: [
@@ -452,7 +452,7 @@ export const foodExperiences = [
     spiceLevel: "None (naturally sweet)",
     dietaryInfo: "Vegan",
     images: [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/King_Coconut.jpg/1200px-King_Coconut.jpg",
+      "https://srilankatravellife.com/wp-content/uploads/2025/11/King-Coconut-Tree.webp",
       "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0f/3a/4c/2a/king-coconut.jpg",
     ],
     ingredients: ["Fresh king coconut water", "King coconut flesh (optional)"],
@@ -486,7 +486,7 @@ export const foodExperiences = [
     spiceLevel: "Mild (chutneys are spicy)",
     dietaryInfo: "Vegan (plain)",
     images: [
-      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0e/4a/3c/2a/jaffna-dosai.jpg",
+      "https://i.pinimg.com/1200x/47/da/ec/47daec102f12d2c7941c122f72a32b84.jpg",
       "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Dosa_Sri_Lanka.jpg/1200px-Dosa_Sri_Lanka.jpg",
     ],
     ingredients: [
@@ -540,7 +540,7 @@ export const foodExperiences = [
     spiceLevel: "Varies (usually medium to hot)",
     dietaryInfo: "Pescatarian",
     images: [
-      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0f/5a/4c/2a/negombo-fish-market.jpg",
+      "https://myeagereats.com/wp-content/uploads/2021/03/wp-1615073589196-2000x1334.jpg",
       "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Sri_Lanka_Seafood.jpg/1200px-Sri_Lanka_Seafood.jpg",
     ],
     availableSeafood: [

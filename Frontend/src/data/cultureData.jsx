@@ -12,7 +12,7 @@ export const culturalAttractions = [
     coordinates: { lat: 7.2906, lng: 80.6337 },
     googleMapsLink: "https://maps.google.com/?q=Kandy+Esala+Perahera",
     images: [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Kandy_Esala_Perahera.jpg/1200px-Kandy_Esala_Perahera.jpg",
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/10/33/b2/25/esala-perahera-festival.jpg?w=1000&h=-1&s=1",
       "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0f/5a/3c/2a/perahera-elephants.jpg",
     ],
     highlights: [
@@ -47,7 +47,7 @@ export const culturalAttractions = [
     coordinates: { lat: 9.6833, lng: 80.0261 },
     googleMapsLink: "https://maps.google.com/?q=Nallur+Kandaswamy+Temple",
     images: [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Nallur_Festival.jpg/1200px-Nallur_Festival.jpg",
+      "https://cdn.lakpura.com/images/LK94007746-03-E.JPG",
       "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0e/4a/5c/2a/nallur-chariot.jpg",
     ],
     highlights: [
@@ -82,7 +82,7 @@ export const culturalAttractions = [
     coordinates: { lat: 7.2906, lng: 80.6337 },
     googleMapsLink: "https://maps.google.com/?q=Kandy+Cultural+Centre",
     images: [
-      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0c/8a/5c/3a/kandyan-dance.jpg",
+      "https://cdn.lakpura.com/images/LK94008892-02-E.JPG",
       "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Kandyan_Dancers.jpg/1200px-Kandyan_Dancers.jpg",
     ],
     highlights: [
@@ -117,7 +117,7 @@ export const culturalAttractions = [
     coordinates: { lat: 6.9271, lng: 79.8612 },
     googleMapsLink: "https://maps.google.com/?q=Vesak+Colombo",
     images: [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Vesak_Lanterns.jpg/1200px-Vesak_Lanterns.jpg",
+      "https://nexttravelsrilanka.com/wp-content/uploads/2021/03/Colourful-vesak-lanterns-in-the-shape-of-lotus-floating-on-lake-water-signifying-the-delight-of-the-Vesak-Festival-in-Sri-Lanka.jpg",
       "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0f/3a/4c/2a/vesak-pandal.jpg",
     ],
     highlights: [
@@ -152,7 +152,7 @@ export const culturalAttractions = [
     coordinates: { lat: 6.2361, lng: 80.0539 },
     googleMapsLink: "https://maps.google.com/?q=Ambalangoda+Mask+Museum",
     images: [
-      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0d/4a/5c/2a/traditional-masks.jpg",
+      "https://www.honeymoonguidesrilanka.com/wp-content/uploads/2024/08/Mask-Making-An-Ancient-Handicraft-of-Sri-Lanka-1920x600-1.jpg",
       "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Sri_Lankan_Masks.jpg/1200px-Sri_Lankan_Masks.jpg",
     ],
     highlights: [
@@ -187,7 +187,7 @@ export const culturalAttractions = [
     coordinates: { lat: 6.9497, lng: 80.7891 },
     googleMapsLink: "https://maps.google.com/?q=Pedro+Tea+Estate",
     images: [
-      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0d/e5/0a/3c/tea-tasting.jpg",
+      "https://d2j57bp7wdztc7.cloudfront.net/pages/images/tea-ceremony/tea-ceremony-asakusa-01-pc.jpg",
       "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Ceylon_Tea.jpg/1200px-Ceylon_Tea.jpg",
     ],
     highlights: [
@@ -222,7 +222,7 @@ export const culturalAttractions = [
     coordinates: { lat: 7.8731, lng: 80.7718 },
     googleMapsLink: "https://maps.google.com/?q=Sri+Lanka+New+Year",
     images: [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Avurudu_Games.jpg/1200px-Avurudu_Games.jpg",
+      "https://media.timeout.com/images/105182896/1920/1440/image.webp",
       "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0f/2a/4c/3a/avurudu-celebration.jpg",
     ],
     highlights: [
@@ -257,7 +257,7 @@ export const culturalAttractions = [
     coordinates: { lat: 7.2906, lng: 80.6337 },
     googleMapsLink: "https://maps.google.com/?q=Batik+Workshop+Kandy",
     images: [
-      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0c/6a/5c/2a/batik-making.jpg",
+      "https://thebatiklibrary.com/cdn/shop/files/the-batik-library-workshop-dyeing-one-full-day-vancouver_1080x.jpg?v=1693541398",
       "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Sri_Lankan_Batik.jpg/1200px-Sri_Lankan_Batik.jpg",
     ],
     highlights: [
@@ -292,7 +292,7 @@ export const culturalAttractions = [
     coordinates: { lat: 8.35, lng: 80.5097 },
     googleMapsLink: "https://maps.google.com/?q=Mihintale+Poson",
     images: [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Poson_Pilgrimage.jpg/1200px-Poson_Pilgrimage.jpg",
+      "https://www.lanka-excursions-holidays.com/uploads/4/0/2/1/40216937/2883355_orig.jpg",
       "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0e/5a/4c/2a/mihintale-poson.jpg",
     ],
     highlights: [
@@ -327,7 +327,7 @@ export const culturalAttractions = [
     coordinates: { lat: 6.9271, lng: 79.8612 },
     googleMapsLink: "https://maps.google.com/?q=Ayurveda+Spa+Sri+Lanka",
     images: [
-      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0f/4a/5c/2a/ayurveda-treatment.jpg",
+      "https://www.jetwinghotels.com/jetwingblue/wp-content/uploads/sites/26/2022/05/Panchakarma_desktop_large.jpg",
       "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Ayurvedic_Oil_Massage.jpg/1200px-Ayurvedic_Oil_Massage.jpg",
     ],
     highlights: [
