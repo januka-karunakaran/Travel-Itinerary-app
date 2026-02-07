@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { fetchUserTrips, generateTrip } from "../api/api";
+import { Link } from "react-router-dom";
 
 export default function MyTrips() {
   const [trips, setTrips] = useState([]);
@@ -34,14 +35,16 @@ export default function MyTrips() {
       .finally(() => setLoading(false));
   }, []);
 
-  const handleGenerate = async () => {
+  const handleGenerate = async (overrideQuery) => {
     const userId = localStorage.getItem("userId");
     if (!userId) {
       setError("Missing user session. Please log in again.");
       return;
     }
 
-    if (!query.destination.trim()) {
+    const nextQuery = overrideQuery || query;
+
+    if (!nextQuery.destination.trim()) {
       setError("Please enter a destination.");
       return;
     }
@@ -49,7 +52,7 @@ export default function MyTrips() {
     setError("");
     setGenerating(true);
     try {
-      const res = await generateTrip({ ...query, userId });
+      const res = await generateTrip({ ...nextQuery, userId });
       const trip = res.data;
       setPlanResult(trip);
 
@@ -87,9 +90,17 @@ export default function MyTrips() {
     const destination =
       planResult?.destination || query.destination || "Destination";
     return [
-      { title: `${destination} skyline`, tone: "tone-sunrise" },
-      { title: `${destination} food`, tone: "tone-sand" },
-      { title: `${destination} culture`, tone: "tone-ocean" },
+      {
+        title: `${destination} skyline`,
+        tone: "tone-sunrise",
+        route: "/skyline",
+      },
+      { title: `${destination} food`, tone: "tone-sand", route: "/food" },
+      {
+        title: `${destination} culture`,
+        tone: "tone-ocean",
+        route: "/culture",
+      },
     ];
   }, [planResult, query.destination]);
 
@@ -168,9 +179,13 @@ export default function MyTrips() {
         <div className="generator-output">
           <div className="photo-strip">
             {photoTiles.map((photo, index) => (
-              <div key={index} className={`photo-tile ${photo.tone}`}>
+              <Link
+                key={index}
+                to={photo.route}
+                className={`photo-tile ${photo.tone} photo-tile-link`}
+              >
                 <span>{photo.title}</span>
-              </div>
+              </Link>
             ))}
           </div>
           <div className="plan-preview">
@@ -199,7 +214,10 @@ export default function MyTrips() {
               key={pick.destination}
               type="button"
               className="quick-pick"
-              onClick={() => setQuery(pick)}
+              onClick={() => {
+                setQuery(pick);
+                handleGenerate(pick);
+              }}
             >
               <span>{pick.destination}</span>
               <small>

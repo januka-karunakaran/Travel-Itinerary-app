@@ -10,31 +10,44 @@ export default function Navbar() {
   };
 
   return (
-    <nav style={styles.navbar}>
-      <div style={styles.logo}>
-        <Link to={isLoggedIn ? "/home" : "/"} style={styles.link}>
+    <nav className="app-navbar">
+      <div className="app-navbar__logo">
+        <Link to={isLoggedIn ? "/home" : "/"} className="app-navbar__link">
           TripGenie ✈️
         </Link>
       </div>
-      <div style={styles.navLinks}>
+      <div className="app-navbar__links">
         {isLoggedIn ? (
           <>
-            <Link to="/home" style={styles.link}>
+            <Link to="/home" className="app-navbar__link">
               Planner
             </Link>
-            <Link to="/my-trips" style={styles.link}>
+            <Link to="/my-trips" className="app-navbar__link">
               History
             </Link>
-            <button onClick={handleLogout} style={styles.logoutBtn}>
+            <Link to="/skyline" className="app-navbar__link">
+              Skyline
+            </Link>
+            <Link to="/food" className="app-navbar__link">
+              Food
+            </Link>
+            <Link to="/culture" className="app-navbar__link">
+              Culture
+            </Link>
+            <button
+              type="button"
+              onClick={handleLogout}
+              className="app-navbar__logout"
+            >
               Logout
             </button>
           </>
         ) : (
           <>
-            <Link to="/" style={styles.link}>
+            <Link to="/" className="app-navbar__link">
               Login
             </Link>
-            <Link to="/signup" style={styles.link}>
+            <Link to="/signup" className="app-navbar__link">
               Sign Up
             </Link>
           </>
@@ -43,24 +56,3 @@ export default function Navbar() {
     </nav>
   );
 }
-
-const styles = {
-  navbar: {
-    display: "flex",
-    justifyContent: "space-between",
-    padding: "1rem 2rem",
-    background: "#2c3e50",
-    color: "white",
-  },
-  logo: { fontSize: "1.5rem", fontWeight: "bold" },
-  navLinks: { display: "flex", gap: "20px", alignItems: "center" },
-  link: { color: "white", textDecoration: "none" },
-  logoutBtn: {
-    background: "#e74c3c",
-    color: "white",
-    border: "none",
-    padding: "5px 10px",
-    cursor: "pointer",
-    borderRadius: "4px",
-  },
-};
