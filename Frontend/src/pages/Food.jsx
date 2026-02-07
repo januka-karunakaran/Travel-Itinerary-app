@@ -1,26 +1,6 @@
 import { Link } from "react-router-dom";
-
-const highlights = [
-  {
-    title: "Street market bites",
-    description: "Taste local specialties fresh from the market stalls.",
-    image:
-      "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1200&q=80",
-  },
-  {
-    title: "Chef-led tasting",
-    description:
-      "Book a tasting menu that tells the city story course by course.",
-    image:
-      "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1200&q=80",
-  },
-  {
-    title: "Cafe culture",
-    description: "Slow down with coffee rituals and sunset dessert stops.",
-    image:
-      "https://images.unsplash.com/photo-1498654896293-37aacf113fd9?auto=format&fit=crop&w=1200&q=80",
-  },
-];
+import { foodExperiences } from "../data/foodData";
+import fallbackImage from "../assets/placeholder-tourism.svg";
 
 export default function Food() {
   return (
@@ -45,18 +25,44 @@ export default function Food() {
       </section>
 
       <section className="explore-grid">
-        {highlights.map((item) => (
-          <article
-            key={item.title}
-            className="explore-card"
-            style={{ backgroundImage: `url("${item.image}")` }}
-          >
-            <div className="explore-card__overlay">
-              <h3>{item.title}</h3>
-              <p>{item.description}</p>
-            </div>
-          </article>
-        ))}
+        {foodExperiences.map((item) => {
+          const cardImage = item.images?.[0] || fallbackImage;
+          const firstSpot = item.whereToTry?.find((spot) => spot.googleLink);
+          const mapLink =
+            firstSpot?.googleLink ||
+            `https://www.google.com/maps?q=${encodeURIComponent(item.name)}`;
+
+          return (
+            <article
+              key={item.id}
+              className="explore-card"
+              style={{
+                backgroundImage: `url("${cardImage}"), url("${fallbackImage}")`,
+              }}
+            >
+              <div className="explore-card__overlay">
+                <h3>{item.name}</h3>
+                <p>{item.description}</p>
+                <div className="explore-card__meta">
+                  <span>{item.region}</span>
+                  <span>{item.bestTime}</span>
+                </div>
+                <div className="explore-card__actions">
+                  <a href={mapLink} target="_blank" rel="noreferrer">
+                    Google maps
+                  </a>
+                  <a
+                    href={`https://www.google.com/search?tbm=isch&q=${encodeURIComponent(item.name + " Sri Lanka")}`}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Photos
+                  </a>
+                </div>
+              </div>
+            </article>
+          );
+        })}
       </section>
     </div>
   );

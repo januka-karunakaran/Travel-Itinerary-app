@@ -1,0 +1,285 @@
+.tour-guides {
+  padding: 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.guides-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.guides-header h1 {
+  font-size: 2.5rem;
+  color: #1a1a1a;
+  margin-bottom: 10px;
+}
+
+.guides-header p {
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 30px;
+}
+
+.specialization-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.spec-btn {
+  width: auto;
+  padding: 10px 20px;
+  border: 2px solid #e0e0e0;
+  background: white;
+  color: #1a1a1a;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.spec-btn:hover {
+  border-color: #ff9800;
+  color: #ff9800;
+}
+
+.spec-btn.active {
+  background: #ff9800;
+  border-color: #ff9800;
+  color: white;
+}
+
+.guides-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 30px;
+}
+
+.guide-card {
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition:
+    transform 0.3s,
+    box-shadow 0.3s;
+}
+
+.guide-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.guide-header {
+  position: relative;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 30px;
+  text-align: center;
+}
+
+.guide-photo {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 5px solid white;
+  object-fit: cover;
+}
+
+.certified-badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: #4caf50;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: bold;
+}
+
+.guide-info {
+  padding: 20px;
+}
+
+.guide-info h3 {
+  font-size: 1.4rem;
+  color: #1a1a1a;
+  margin-bottom: 5px;
+}
+
+.guide-experience {
+  color: #888;
+  font-size: 0.9rem;
+  margin-bottom: 15px;
+}
+
+.guide-rating {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.rating-stars {
+  color: #ffa000;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.rating-reviews {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.guide-languages,
+.guide-specializations,
+.guide-districts {
+  margin-bottom: 15px;
+}
+
+.guide-languages strong,
+.guide-specializations strong {
+  display: block;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.lang-tags,
+.spec-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.lang-tag {
+  background: #e8f5e9;
+  color: #2e7d32;
+  padding: 5px 10px;
+  border-radius: 12px;
+  font-size: 0.85rem;
+}
+
+.spec-tag {
+  background: #fff3e0;
+  color: #e65100;
+  padding: 5px 10px;
+  border-radius: 12px;
+  font-size: 0.85rem;
+}
+
+.guide-districts {
+  font-size: 0.9rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+.guide-description {
+  color: #666;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 15px 0;
+  padding: 15px;
+  background: #f9f9f9;
+  border-radius: 8px;
+}
+
+.guide-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+  border-top: 1px solid #e0e0e0;
+  border-bottom: 1px solid #e0e0e0;
+  margin-bottom: 15px;
+}
+
+.guide-price {
+  display: flex;
+  flex-direction: column;
+}
+
+.price-label {
+  font-size: 0.85rem;
+  color: #888;
+}
+
+.price-value {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #ff9800;
+}
+
+.availability {
+  padding: 6px 12px;
+  border-radius: 15px;
+  font-size: 0.85rem;
+  font-weight: bold;
+}
+
+.availability.available {
+  background: #e8f5e9;
+  color: #2e7d32;
+}
+
+.availability.booked {
+  background: #ffebee;
+  color: #c62828;
+}
+
+.guide-actions {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.contact-btn {
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  text-align: center;
+  text-decoration: none;
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.contact-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.phone-btn {
+  background: #2196f3;
+  color: white;
+}
+
+.whatsapp-btn {
+  background: #25d366;
+  color: white;
+}
+
+.email-btn {
+  background: #ff5722;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .guides-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .guide-actions {
+    grid-template-columns: 1fr;
+  }
+}

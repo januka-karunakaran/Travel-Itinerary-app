@@ -1,0 +1,96 @@
+.districts-view {
+  display: grid;
+  gap: 20px;
+}
+
+.districts-header {
+  background: var(--card);
+  border-radius: 18px;
+  padding: 20px;
+  box-shadow: 0 16px 40px rgba(20, 28, 34, 0.08);
+}
+
+.districts-header h1 {
+  margin-bottom: 8px;
+}
+
+.search-bar {
+  margin-top: 16px;
+}
+
+.search-input {
+  width: 100%;
+}
+
+.districts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+}
+
+.district-detail {
+  background: var(--card);
+  border-radius: 18px;
+  padding: 20px;
+  box-shadow: 0 16px 40px rgba(20, 28, 34, 0.08);
+}
+
+.district-detail-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.province-badge {
+  background: #f0f2f4;
+  color: var(--primary);
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.map-container {
+  margin: 16px 0;
+}
+
+.category-filter {
+  margin: 16px 0;
+}
+
+.category-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.category-btn {
+  width: auto;
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: #f6f7f8;
+  color: var(--primary);
+  border: 1px solid var(--soft);
+}
+
+.category-btn.active {
+  background: var(--accent);
+  color: #fff;
+  border-color: transparent;
+}
+
+.back-button {
+  width: auto;
+  padding: 10px 16px;
+  border-radius: 999px;
+  background: #f6f7f8;
+  color: var(--primary);
+  border: 1px solid var(--soft);
+}
+
+.places-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+}

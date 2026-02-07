@@ -34,6 +34,15 @@ export default function Navbar() {
             <Link to="/culture" className="app-navbar__link">
               Culture
             </Link>
+            <Link to="/districts" className="app-navbar__link">
+              Districts
+            </Link>
+            <Link to="/itineraries" className="app-navbar__link">
+              Itineraries
+            </Link>
+            <Link to="/guides" className="app-navbar__link">
+              Guides
+            </Link>
             <button
               type="button"
               onClick={handleLogout}

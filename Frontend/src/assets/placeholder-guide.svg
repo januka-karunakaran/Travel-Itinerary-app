@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f2f7fb" />
+      <stop offset="100%" stop-color="#dce8f2" />
+    </linearGradient>
+  </defs>
+  <rect width="400" height="400" fill="url(#bg)" />
+  <circle cx="200" cy="150" r="70" fill="#f3d6c2" />
+  <rect x="90" y="230" width="220" height="130" rx="60" fill="#7aa4c8" />
+  <text x="50%" y="330" text-anchor="middle" font-family="Space Grotesk, Arial, sans-serif" font-size="22" fill="#ffffff">
+    Local Guide
+  </text>
+</svg>

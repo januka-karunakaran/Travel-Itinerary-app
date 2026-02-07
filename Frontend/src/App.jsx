@@ -15,6 +15,10 @@ import Plan from "./pages/Plan";
 import Skyline from "./pages/Skyline";
 import Food from "./pages/Food";
 import Culture from "./pages/Culture";
+import SriLanka from "./pages/SriLanka";
+import Districts from "./pages/Districts";
+import Itineraries from "./pages/Itineraries";
+import Guides from "./pages/Guides";
 
 function AppLayout() {
   const location = useLocation();
@@ -79,6 +83,38 @@ function AppLayout() {
             element={
               <ProtectedRoute>
                 <Culture />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/sri-lanka"
+            element={
+              <ProtectedRoute>
+                <SriLanka />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/districts"
+            element={
+              <ProtectedRoute>
+                <Districts />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/itineraries"
+            element={
+              <ProtectedRoute>
+                <Itineraries />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/guides"
+            element={
+              <ProtectedRoute>
+                <Guides />
               </ProtectedRoute>
             }
           />

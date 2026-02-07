@@ -1,0 +1,47 @@
+.district-card {
+  background: var(--card);
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0 12px 30px rgba(20, 28, 34, 0.08);
+  display: grid;
+  gap: 12px;
+  cursor: pointer;
+}
+
+.district-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.province-tag {
+  background: #f0f2f4;
+  color: var(--primary);
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.district-card-description {
+  color: var(--muted);
+  margin: 0;
+}
+
+.district-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.explore-btn {
+  width: auto;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #fff;
+}

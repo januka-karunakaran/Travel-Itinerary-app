@@ -16,6 +16,11 @@ export default function Plan() {
       { title: `${place} skyline`, tone: "tone-sunrise", route: "/skyline" },
       { title: `${place} food`, tone: "tone-sand", route: "/food" },
       { title: `${place} culture`, tone: "tone-ocean", route: "/culture" },
+      {
+        title: "Sri Lanka districts",
+        tone: "tone-jungle",
+        route: "/sri-lanka",
+      },
     ];
   }, [destination]);
 

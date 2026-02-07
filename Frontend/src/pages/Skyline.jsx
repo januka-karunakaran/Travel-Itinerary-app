@@ -1,25 +1,13 @@
 import { Link } from "react-router-dom";
+import { skylineAttractions } from "../data/skylineData";
+import fallbackImage from "../assets/placeholder-tourism.svg";
 
-const highlights = [
-  {
-    title: "Golden hour skyline",
-    description: "Watch the city glow with soft sunsets and layered skylines.",
-    image:
-      "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1200&q=80",
-  },
-  {
-    title: "Rooftop viewpoints",
-    description: "Pair skyline views with cocktails, music, and night lights.",
-    image:
-      "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=80",
-  },
-  {
-    title: "Waterfront silhouettes",
-    description: "Glide along the waterfront and photograph reflections.",
-    image:
-      "https://images.unsplash.com/photo-1472214103451-9374bd1c798e?auto=format&fit=crop&w=1200&q=80",
-  },
-];
+const buildMapsLink = (coordinates) => {
+  if (!coordinates) {
+    return "https://www.google.com/maps";
+  }
+  return `https://www.google.com/maps?q=${coordinates.lat},${coordinates.lng}`;
+};
 
 export default function Skyline() {
   return (
@@ -44,18 +32,42 @@ export default function Skyline() {
       </section>
 
       <section className="explore-grid">
-        {highlights.map((item) => (
-          <article
-            key={item.title}
-            className="explore-card"
-            style={{ backgroundImage: `url("${item.image}")` }}
-          >
-            <div className="explore-card__overlay">
-              <h3>{item.title}</h3>
-              <p>{item.description}</p>
-            </div>
-          </article>
-        ))}
+        {skylineAttractions.map((item) => {
+          const cardImage = item.images?.[0] || fallbackImage;
+          const mapLink =
+            item.googleMapsLink || buildMapsLink(item.coordinates);
+
+          return (
+            <article
+              key={item.id}
+              className="explore-card"
+              style={{
+                backgroundImage: `url("${cardImage}"), url("${fallbackImage}")`,
+              }}
+            >
+              <div className="explore-card__overlay">
+                <h3>{item.name}</h3>
+                <p>{item.description}</p>
+                <div className="explore-card__meta">
+                  <span>{item.district}</span>
+                  <span>{item.bestTimeToVisit}</span>
+                </div>
+                <div className="explore-card__actions">
+                  <a href={mapLink} target="_blank" rel="noreferrer">
+                    Google maps
+                  </a>
+                  <a
+                    href={`https://www.google.com/search?tbm=isch&q=${encodeURIComponent(item.name + " Sri Lanka")}`}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Photos
+                  </a>
+                </div>
+              </div>
+            </article>
+          );
+        })}
       </section>
     </div>
   );

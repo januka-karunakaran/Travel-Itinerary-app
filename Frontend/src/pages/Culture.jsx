@@ -1,25 +1,13 @@
 import { Link } from "react-router-dom";
+import { culturalAttractions } from "../data/cultureData";
+import fallbackImage from "../assets/placeholder-tourism.svg";
 
-const highlights = [
-  {
-    title: "Museums & galleries",
-    description: "Explore exhibitions that define the city heritage.",
-    image:
-      "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=1200&q=80",
-  },
-  {
-    title: "Neighborhood rituals",
-    description: "Stroll through historic districts and meet local artisans.",
-    image:
-      "https://images.unsplash.com/photo-1441716844725-09cedc13a4e7?auto=format&fit=crop&w=1200&q=80",
-  },
-  {
-    title: "Live performances",
-    description: "Catch music, dance, and theater under city lights.",
-    image:
-      "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?auto=format&fit=crop&w=1200&q=80",
-  },
-];
+const buildMapsLink = (coordinates) => {
+  if (!coordinates) {
+    return "https://www.google.com/maps";
+  }
+  return `https://www.google.com/maps?q=${coordinates.lat},${coordinates.lng}`;
+};
 
 export default function Culture() {
   return (
@@ -44,18 +32,42 @@ export default function Culture() {
       </section>
 
       <section className="explore-grid">
-        {highlights.map((item) => (
-          <article
-            key={item.title}
-            className="explore-card"
-            style={{ backgroundImage: `url("${item.image}")` }}
-          >
-            <div className="explore-card__overlay">
-              <h3>{item.title}</h3>
-              <p>{item.description}</p>
-            </div>
-          </article>
-        ))}
+        {culturalAttractions.map((item) => {
+          const cardImage = item.images?.[0] || fallbackImage;
+          const mapLink =
+            item.googleMapsLink || buildMapsLink(item.coordinates);
+
+          return (
+            <article
+              key={item.id}
+              className="explore-card"
+              style={{
+                backgroundImage: `url("${cardImage}"), url("${fallbackImage}")`,
+              }}
+            >
+              <div className="explore-card__overlay">
+                <h3>{item.name}</h3>
+                <p>{item.description}</p>
+                <div className="explore-card__meta">
+                  <span>{item.location}</span>
+                  <span>{item.when}</span>
+                </div>
+                <div className="explore-card__actions">
+                  <a href={mapLink} target="_blank" rel="noreferrer">
+                    Google maps
+                  </a>
+                  <a
+                    href={`https://www.google.com/search?tbm=isch&q=${encodeURIComponent(item.name + " Sri Lanka")}`}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Photos
+                  </a>
+                </div>
+              </div>
+            </article>
+          );
+        })}
       </section>
     </div>
   );

@@ -55,6 +55,11 @@ export default function Home() {
         tone: "tone-ocean",
         route: "/culture",
       },
+      {
+        title: "Sri Lanka districts",
+        tone: "tone-jungle",
+        route: "/sri-lanka",
+      },
     ];
   }, [query.destination]);
 
