@@ -949,7 +949,7 @@ export const districts = [
         coordinates: { lat: 7.4833, lng: 80.3667 },
         googleMapsLink: "https://maps.google.com/?q=Elephant+Rock+Kurunegala",
         images: [
-          "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0d/2c/5f/1a/elephant-rock.jpg",
+          "https://www.dailylife.lk/travel/ethagala/images/header_graphic.jpg",
         ],
         bestTimeToVisit: "Year-round (early morning recommended)",
         duration: "2-3 hours",
@@ -964,7 +964,7 @@ export const districts = [
         coordinates: { lat: 7.3333, lng: 80.4167 },
         googleMapsLink: "https://maps.google.com/?q=Ridi+Vihara+Kurunegala",
         images: [
-          "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Ridi_Viharaya.jpg/1200px-Ridi_Viharaya.jpg",
+          "https://sp-ao.shortpixel.ai/client/to_webp,q_lossy,ret_img,w_1200/https://lemonicks.com/wp-content/uploads/2022/12/ridee-Viharaya-srilankaIMG_20221116_123951.jpg",
         ],
         bestTimeToVisit: "Year-round",
         duration: "1-2 hours",
@@ -979,7 +979,7 @@ export const districts = [
         coordinates: { lat: 7.8167, lng: 80.3167 },
         googleMapsLink: "https://maps.google.com/?q=Yapahuwa+Rock+Fortress",
         images: [
-          "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Yapahuwa_Rock_Fortress.jpg/1200px-Yapahuwa_Rock_Fortress.jpg",
+          "https://www.attractionsinsrilanka.com/wp-content/uploads/2021/01/Yapahuwa-Rock-Fortress.jpg",
         ],
         bestTimeToVisit: "Year-round",
         duration: "2-3 hours",
@@ -1004,8 +1004,7 @@ export const districts = [
         coordinates: { lat: 8.2333, lng: 79.7667 },
         googleMapsLink: "https://maps.google.com/?q=Kalpitiya+Sri+Lanka",
         images: [
-          "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0f/6d/4c/2a/kalpitiya-beach.jpg",
-          "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Kalpitiya_dolphins.jpg/1200px-Kalpitiya_dolphins.jpg",
+          "https://nexttravelsrilanka.com/wp-content/uploads/2023/02/Kalpitiya.jpg",
         ],
         bestTimeToVisit:
           "May to October (kitesurfing), November to April (dolphin watching)",
@@ -1021,7 +1020,7 @@ export const districts = [
         coordinates: { lat: 8.4833, lng: 80.0167 },
         googleMapsLink: "https://maps.google.com/?q=Wilpattu+National+Park",
         images: [
-          "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Wilpattu_National_Park_Leopard.jpg/1200px-Wilpattu_National_Park_Leopard.jpg",
+          "https://media-cdn.tripadvisor.com/media/attractions-splice-spp-674x446/0a/02/9a/78.jpg",
         ],
         bestTimeToVisit: "February to October",
         duration: "Half day safari",
@@ -1036,7 +1035,7 @@ export const districts = [
         coordinates: { lat: 8.2333, lng: 79.7667 },
         googleMapsLink: "https://maps.google.com/?q=Dutch+Fort+Kalpitiya",
         images: [
-          "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0c/3d/2f/1a/dutch-fort-kalpitiya.jpg",
+          "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/SL_Kalpitiya_asv2020-01_img6_Dutch_fort.jpg/500px-SL_Kalpitiya_asv2020-01_img6_Dutch_fort.jpg",
         ],
         bestTimeToVisit: "Year-round",
         duration: "1 hour",
@@ -1061,7 +1060,7 @@ export const districts = [
         coordinates: { lat: 7.0333, lng: 81.05 },
         googleMapsLink: "https://maps.google.com/?q=Dunhinda+Falls",
         images: [
-          "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Dunhinda_Falls.jpg/1200px-Dunhinda_Falls.jpg",
+          "https://www.wondersofceylon.com/content/images/2023/11/WoC-Dunhinda-Falls.webp",
         ],
         bestTimeToVisit: "October to January",
         duration: "2-3 hours",
@@ -1076,7 +1075,7 @@ export const districts = [
         coordinates: { lat: 6.9833, lng: 81.05 },
         googleMapsLink: "https://maps.google.com/?q=Muthiyangana+Temple",
         images: [
-          "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0d/1c/4f/2a/muthiyangana-temple.jpg",
+          "https://www.trawell.in/admin/images/upload/527735594muthiyangana_rajamaha_viharaya.jpg",
         ],
         bestTimeToVisit: "Year-round",
         duration: "1 hour",
@@ -1091,7 +1090,7 @@ export const districts = [
         coordinates: { lat: 6.8667, lng: 81.1167 },
         googleMapsLink: "https://maps.google.com/?q=Dhowa+Rock+Temple",
         images: [
-          "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Dhowa_Temple.jpg/1200px-Dhowa_Temple.jpg",
+          "https://www.wondersofceylon.com/content/images/2023/06/Untitled-design--84--1.png",
         ],
         bestTimeToVisit: "Year-round",
         duration: "1 hour",
@@ -1116,7 +1115,7 @@ export const districts = [
         coordinates: { lat: 6.4667, lng: 81.6167 },
         googleMapsLink: "https://maps.google.com/?q=Yala+National+Park+Block+3",
         images: [
-          "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0f/5c/3d/1a/yala-block-3.jpg",
+          "https://www.lanka-excursions-holidays.com/uploads/4/0/2/1/40216937/01-dsc-0396-900_orig.jpg",
         ],
         bestTimeToVisit: "February to July",
         duration: "Half day safari",
@@ -1130,9 +1129,7 @@ export const districts = [
         category: "Nature",
         coordinates: { lat: 6.8333, lng: 81.35 },
         googleMapsLink: "https://maps.google.com/?q=Galabedda+Falls",
-        images: [
-          "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0c/2d/4f/1a/galabedda-falls.jpg",
-        ],
+        images: ["https://cdn.lakpura.com/images/LK94528230-01-E-239-150.JPG"],
         bestTimeToVisit: "November to February",
         duration: "2 hours",
         entranceFee: "Free",
@@ -1146,7 +1143,7 @@ export const districts = [
         coordinates: { lat: 6.3833, lng: 81.4833 },
         googleMapsLink: "https://maps.google.com/?q=Maligawila+Buddha+Statue",
         images: [
-          "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Maligawila_Buddha.jpg/1200px-Maligawila_Buddha.jpg",
+          "https://www.srilankanexpeditions.co.uk/images/main_slider/sri-lanka-guide-destinations/maligawila-buddha-statue/01.jpg",
         ],
         bestTimeToVisit: "Year-round",
         duration: "1 hour",
@@ -1172,8 +1169,7 @@ export const districts = [
         googleMapsLink:
           "https://maps.google.com/?q=Pinnawala+Elephant+Orphanage",
         images: [
-          "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Pinnawala_Elephant_Orphanage.jpg/1200px-Pinnawala_Elephant_Orphanage.jpg",
-          "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/10/3c/1d/2a/elephants-bathing.jpg",
+          "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Pinnawala_01.jpg/500px-Pinnawala_01.jpg",
         ],
         bestTimeToVisit: "Year-round",
         duration: "2-4 hours",
@@ -1188,7 +1184,7 @@ export const districts = [
         coordinates: { lat: 7.25, lng: 80.6167 },
         googleMapsLink: "https://maps.google.com/?q=Ambuluwawa+Tower",
         images: [
-          "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0f/8d/5c/2a/ambuluwawa-tower.jpg",
+          "https://ambuluwawa.com/wp-content/uploads/2024/06/Firefly-20240617204232-1-1280x1280.webp",
         ],
         bestTimeToVisit: "Year-round",
         duration: "2-3 hours",
@@ -1203,7 +1199,7 @@ export const districts = [
         coordinates: { lat: 7.2667, lng: 80.3167 },
         googleMapsLink: "https://maps.google.com/?q=Utuwankanda+Kegalle",
         images: [
-          "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0d/4c/3f/1a/utuwankanda.jpg",
+          "https://premiumtravelog.com/wp-content/uploads/2019/11/6-1536x1152.jpg",
         ],
         bestTimeToVisit: "Year-round",
         duration: "3-4 hours",
@@ -1228,7 +1224,7 @@ export const districts = [
         coordinates: { lat: 9.1667, lng: 79.5 },
         googleMapsLink: "https://maps.google.com/?q=Adams+Bridge+Mannar",
         images: [
-          "https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Adam%27s_Bridge.jpg/1200px-Adam%27s_Bridge.jpg",
+          "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/19/67/e0/96/adam-s-bridge-rama-setu.jpg?w=1100&h=-1&s=1",
         ],
         bestTimeToVisit: "Year-round",
         duration: "2-3 hours",
@@ -1243,7 +1239,7 @@ export const districts = [
         coordinates: { lat: 8.9833, lng: 79.9167 },
         googleMapsLink: "https://maps.google.com/?q=Mannar+Fort",
         images: [
-          "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0d/5c/2f/1a/mannar-fort.jpg",
+          "https://www.storyofsrilanka.com/images/sri-lanka-guide/forts-light-houses-and-bridges/mannar-fort/01.jpg",
         ],
         bestTimeToVisit: "Year-round",
         duration: "1 hour",
@@ -1258,7 +1254,7 @@ export const districts = [
         coordinates: { lat: 9.0, lng: 79.9 },
         googleMapsLink: "https://maps.google.com/?q=Baobab+Tree+Mannar",
         images: [
-          "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0c/4d/3f/1a/baobab-tree.jpg",
+          "https://d4g0cdul6yygp.cloudfront.net/uploads/2023/10/Baobab-Tree-Cover.jpg?dpl=dpl_7NAWjsdXLB19u2wu3LcwTsRuXDfe",
         ],
         bestTimeToVisit: "Year-round",
         duration: "1 hour",
@@ -1272,9 +1268,7 @@ export const districts = [
         category: "Religious",
         coordinates: { lat: 8.9167, lng: 79.8333 },
         googleMapsLink: "https://maps.google.com/?q=Thiruketheeswaram+Temple",
-        images: [
-          "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0d/2c/4f/2a/thiruketheeswaram.jpg",
-        ],
+        images: ["https://cdn.lakpura.com/images/LK94008023-01-E-239-150.JPG"],
         bestTimeToVisit: "Year-round",
         duration: "1-2 hours",
         entranceFee: "Free",
@@ -1298,7 +1292,7 @@ export const districts = [
         coordinates: { lat: 9.5333, lng: 80.4167 },
         googleMapsLink: "https://maps.google.com/?q=Iranamadu+Tank",
         images: [
-          "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0c/5d/2f/1a/iranamadu-tank.jpg",
+          "https://images.mindtrip.ai/attractions/834c/99fd/8cd9/678f/427e/825b/94f0/52f9",
         ],
         bestTimeToVisit: "November to March",
         duration: "1-2 hours",
@@ -1313,7 +1307,7 @@ export const districts = [
         coordinates: { lat: 9.3961, lng: 80.3981 },
         googleMapsLink: "https://maps.google.com/?q=Kilinochchi+War+Memorial",
         images: [
-          "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0d/3c/2f/1a/war-memorial.jpg",
+          "https://kingshukmukherji.wordpress.com/wp-content/uploads/2015/01/dsc_4091-1.jpg?w=1440",
         ],
         bestTimeToVisit: "Year-round",
         duration: "1 hour",
@@ -1339,7 +1333,7 @@ export const districts = [
         googleMapsLink:
           "https://maps.google.com/?q=Vavuniya+Archaeological+Museum",
         images: [
-          "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0c/4d/2f/1a/archaeological-museum.jpg",
+          "https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Archaeological_Museum%2C_Vavuniya.JPG/500px-Archaeological_Museum%2C_Vavuniya.JPG",
         ],
         bestTimeToVisit: "Year-round",
         duration: "1-2 hours",
@@ -1354,7 +1348,7 @@ export const districts = [
         coordinates: { lat: 8.75, lng: 80.5 },
         googleMapsLink: "https://maps.google.com/?q=Vavuniya+Ancient+Tanks",
         images: [
-          "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0d/1c/3f/1a/ancient-tanks.jpg",
+          "https://dayouting.lk/img_uploads/tourist-places/6571681677079277.jpg",
         ],
         bestTimeToVisit: "Year-round",
         duration: "1-2 hours",
@@ -1379,7 +1373,7 @@ export const districts = [
         coordinates: { lat: 9.25, lng: 80.8333 },
         googleMapsLink: "https://maps.google.com/?q=Nanthikadal+Lagoon",
         images: [
-          "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0d/5c/3f/1a/nanthikadal-lagoon.jpg",
+          "https://bandi42.com/wp-content/uploads/2013/03/dsc_0933.jpg?w=1024",
         ],
         bestTimeToVisit: "November to March",
         duration: "2-3 hours",
@@ -1394,7 +1388,7 @@ export const districts = [
         coordinates: { lat: 9.2667, lng: 80.8167 },
         googleMapsLink: "https://maps.google.com/?q=Mullaitivu+Beach",
         images: [
-          "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0c/6d/2f/1a/mullaitivu-beach.jpg",
+          "https://beaches-searcher.com/images/beaches/144201051/LK201051.jpg",
         ],
         bestTimeToVisit: "April to September",
         duration: "Half day",
