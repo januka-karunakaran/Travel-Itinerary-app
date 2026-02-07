@@ -1,4 +1,4 @@
 Backend/target/
-Backend/backend.log
-Backend/dependencies.txt
+*.class
+*.log
 .vscode/
