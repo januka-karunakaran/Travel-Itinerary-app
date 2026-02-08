@@ -95,6 +95,7 @@ export default function SriLanka() {
                         }
                         target="_blank"
                         rel="noreferrer"
+                        className="maps-link"
                       >
                         Google maps
                       </a>

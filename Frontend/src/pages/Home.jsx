@@ -123,6 +123,7 @@ export default function Home() {
               <select
                 value={query.budget}
                 onChange={(e) => setQuery({ ...query, budget: e.target.value })}
+                className="planner-budget-select"
               >
                 <option value="Low">Low</option>
                 <option value="Medium">Medium</option>
