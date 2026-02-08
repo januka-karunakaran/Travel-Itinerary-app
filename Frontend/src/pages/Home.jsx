@@ -1,5 +1,6 @@
 import { useMemo, useState } from "react";
 import { generateTrip } from "../api/api";
+import { districts } from "../data/srilankaData";
 import { Link, useNavigate } from "react-router-dom";
 
 export default function Home() {
@@ -17,8 +18,23 @@ export default function Home() {
     setLoading(true);
     setError("");
     const userId = localStorage.getItem("userId");
-    if (!query.destination.trim()) {
+    const destination = query.destination.trim();
+    if (!destination) {
       setError("Please enter a destination.");
+      setLoading(false);
+      return;
+    }
+
+    const matchedDistrict = districts.find(
+      (district) => district.name.toLowerCase() === destination.toLowerCase(),
+    );
+
+    if (matchedDistrict) {
+      navigate("/districts", {
+        state: {
+          districtName: matchedDistrict.name,
+        },
+      });
       setLoading(false);
       return;
     }

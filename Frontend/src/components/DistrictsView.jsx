@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 import { districts } from "../data/srilankaData";
 import DistrictCard from "./DistrictCard";
 import TouristPlaceCard from "./TouristPlaceCard";
@@ -8,6 +9,7 @@ const DistrictsView = () => {
   const [selectedDistrict, setSelectedDistrict] = useState(null);
   const [searchTerm, setSearchTerm] = useState("");
   const [filterCategory, setFilterCategory] = useState("All");
+  const location = useLocation();
 
   const categories = [
     "All",
@@ -24,6 +26,20 @@ const DistrictsView = () => {
       district.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
       district.province.toLowerCase().includes(searchTerm.toLowerCase()),
   );
+
+  useEffect(() => {
+    const districtName = location.state?.districtName;
+    if (!districtName) return;
+
+    const match = districts.find(
+      (district) => district.name.toLowerCase() === districtName.toLowerCase(),
+    );
+
+    if (match) {
+      setSelectedDistrict(match);
+      setSearchTerm(match.name);
+    }
+  }, [location.state?.districtName]);
 
   const handleDistrictClick = (district) => {
     setSelectedDistrict(district);

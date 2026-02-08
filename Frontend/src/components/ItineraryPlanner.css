@@ -1,3 +1,93 @@
+.itineraries-page {
+  display: grid;
+  gap: 24px;
+}
+
+.itineraries-hero {
+  background: var(--card);
+  border-radius: 20px;
+  padding: 28px 32px;
+  box-shadow: 0 20px 60px rgba(20, 28, 34, 0.08);
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  gap: 24px;
+  align-items: center;
+}
+
+.itineraries-hero__copy h1 {
+  font-size: clamp(2rem, 3.5vw, 2.7rem);
+  margin-bottom: 10px;
+}
+
+.itineraries-hero__meta {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 16px;
+}
+
+.meta-pill {
+  background: var(--soft);
+  color: var(--primary);
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.itineraries-hero__card {
+  background: #f7fafb;
+  border-radius: 18px;
+  padding: 20px 22px;
+  display: grid;
+  gap: 16px;
+  border: 1px solid #e0e7ea;
+}
+
+.itineraries-hero__card h3 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.itineraries-steps {
+  display: grid;
+  gap: 12px;
+}
+
+.itineraries-step {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 12px;
+  align-items: start;
+}
+
+.itineraries-step h4 {
+  margin: 0 0 4px 0;
+  font-size: 1rem;
+}
+
+.itineraries-step p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.step-dot {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #fff;
+  display: grid;
+  place-items: center;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+.itineraries-body .itinerary-planner {
+  padding: 0;
+}
+
 .itinerary-planner {
   padding: 20px;
   max-width: 1400px;
@@ -220,6 +310,12 @@
   display: grid;
   grid-template-columns: 350px 1fr;
   gap: 40px;
+}
+
+@media (max-width: 900px) {
+  .itineraries-hero {
+    grid-template-columns: 1fr;
+  }
 }
 
 .plan-sidebar {
