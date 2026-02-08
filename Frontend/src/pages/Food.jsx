@@ -48,7 +48,12 @@ export default function Food() {
                   <span>{item.bestTime}</span>
                 </div>
                 <div className="explore-card__actions">
-                  <a href={mapLink} target="_blank" rel="noreferrer">
+                  <a
+                    href={mapLink}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="maps-link"
+                  >
                     Google maps
                   </a>
                   <a
