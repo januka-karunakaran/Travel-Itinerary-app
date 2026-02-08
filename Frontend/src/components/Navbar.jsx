@@ -22,9 +22,6 @@ export default function Navbar() {
             <Link to="/home" className="app-navbar__link">
               Planner
             </Link>
-            <Link to="/my-trips" className="app-navbar__link">
-              History
-            </Link>
             <Link to="/skyline" className="app-navbar__link">
               Skyline
             </Link>

@@ -57,9 +57,6 @@ export default function Plan() {
             <Link to="/home" className="primary-link">
               Plan another trip
             </Link>
-            <Link to="/my-trips" className="link-muted">
-              View trip history
-            </Link>
           </div>
         </div>
 
