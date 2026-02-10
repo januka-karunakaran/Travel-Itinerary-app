@@ -27,9 +27,6 @@ export default function SriLanka() {
             <Link to="/plan" className="link-muted">
               View itinerary
             </Link>
-            <Link to="/my-trips" className="link-muted">
-              Trip history
-            </Link>
             <Link to="/districts" className="link-muted">
               Districts view
             </Link>

@@ -716,19 +716,6 @@ button:disabled {
   flex-wrap: wrap;
 }
 
-.history-page {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-}
-
-.page-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
-}
-
 .eyebrow {
   margin: 0 0 8px 0;
   font-size: 0.85rem;
@@ -736,62 +723,6 @@ button:disabled {
   text-transform: uppercase;
   letter-spacing: 0.12em;
   color: var(--muted);
-}
-
-.view-toggle {
-  display: flex;
-  gap: 12px;
-  background: var(--card);
-  padding: 6px;
-  border-radius: 999px;
-  box-shadow: 0 10px 30px rgba(15, 20, 24, 0.08);
-}
-
-.view-toggle button {
-  width: auto;
-  margin: 0;
-  padding: 8px 18px;
-  background: transparent;
-  color: var(--primary);
-  font-size: 0.9rem;
-  border-radius: 999px;
-}
-
-.view-toggle button.active {
-  background: var(--accent);
-  color: #fff;
-}
-
-.trip-generator {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  gap: 24px;
-  background: var(--card);
-  padding: 24px;
-  border-radius: 18px;
-  box-shadow: 0 20px 60px rgba(20, 28, 34, 0.08);
-}
-
-.generator-form {
-  display: grid;
-  gap: 16px;
-}
-
-.generator-form label {
-  display: block;
-  margin-bottom: 8px;
-  font-weight: 600;
-  color: var(--primary);
-}
-
-.generator-form button {
-  width: auto;
-  padding: 12px 24px;
-}
-
-.generator-output {
-  display: grid;
-  gap: 16px;
 }
 
 .photo-strip {

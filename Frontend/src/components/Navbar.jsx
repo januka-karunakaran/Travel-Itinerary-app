@@ -26,6 +26,8 @@ export default function Navbar() {
               }
             >
               Planner
+            </Link>
+            <Link to="/skyline" className="app-navbar__link">
             </NavLink>
             <NavLink
               to="/my-trips"

@@ -10,7 +10,6 @@ import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import ForgotPassword from "./pages/ForgotPassword";
 import Home from "./pages/Home";
-import MyTrips from "./pages/MyTrips";
 import Plan from "./pages/Plan";
 import Skyline from "./pages/Skyline";
 import Food from "./pages/Food";
@@ -43,14 +42,6 @@ function AppLayout() {
             element={
               <ProtectedRoute>
                 <Home />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/my-trips"
-            element={
-              <ProtectedRoute>
-                <MyTrips />
               </ProtectedRoute>
             }
           />
