@@ -7,3 +7,6 @@ export const signupUser = (data) => API.post("/auth/signup", data);
 export const resetPassword = (data) => API.post("/auth/forgot-password", data);
 export const generateTrip = (data) => API.post("/trips/generate", data);
 export const fetchUserTrips = (userId) => API.get(`/trips/user/${userId}`);
+export const fetchDistricts = () => API.get("/content/districts");
+export const fetchItineraryPlans = () => API.get("/content/itineraries");
+export const fetchTourGuides = () => API.get("/content/guides");

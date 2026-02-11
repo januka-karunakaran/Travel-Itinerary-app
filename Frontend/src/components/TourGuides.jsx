@@ -1,10 +1,13 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import fallbackGuide from "../assets/placeholder-guide.svg";
-import { tourGuides } from "../data/srilankaData";
+import { fetchTourGuides } from "../api/api";
 import "./TourGuides.css";
 
 const TourGuides = () => {
   const [filterSpec, setFilterSpec] = useState("All");
+  const [guides, setGuides] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
 
   const specializations = [
     "All",
@@ -15,10 +18,38 @@ const TourGuides = () => {
     "Northern Tours",
   ];
 
+  useEffect(() => {
+    const userId = localStorage.getItem("userId");
+    if (!userId) {
+      setError("Please log in to view tour guides.");
+      setLoading(false);
+      return;
+    }
+
+    let isActive = true;
+    fetchTourGuides()
+      .then((response) => {
+        if (!isActive) return;
+        setGuides(response.data || []);
+        setError("");
+      })
+      .catch(() => {
+        if (!isActive) return;
+        setError("Failed to load tour guides.");
+      })
+      .finally(() => {
+        if (isActive) setLoading(false);
+      });
+
+    return () => {
+      isActive = false;
+    };
+  }, []);
+
   const filteredGuides =
     filterSpec === "All"
-      ? tourGuides
-      : tourGuides.filter((guide) =>
+      ? guides
+      : guides.filter((guide) =>
           guide.specialization.some((spec) => spec.includes(filterSpec)),
         );
 
@@ -44,104 +75,116 @@ const TourGuides = () => {
         </div>
       </div>
 
-      <div className="guides-grid">
-        {filteredGuides.map((guide) => (
-          <div key={guide.id} className="guide-card">
-            <div className="guide-header">
-              <img
-                src={guide.photo || fallbackGuide}
-                alt={guide.name}
-                className="guide-photo"
-                loading="lazy"
-                referrerPolicy="no-referrer"
-                onError={(event) => {
-                  event.currentTarget.src = fallbackGuide;
-                }}
-              />
-              {guide.certified && (
-                <span className="certified-badge">✓ Certified</span>
-              )}
-            </div>
+      {loading ? (
+        <div className="loading">Loading tour guides...</div>
+      ) : error ? (
+        <div className="error">{error}</div>
+      ) : (
+        <div className="guides-grid">
+          {filteredGuides.length === 0 ? (
+            <div className="empty">No guides found.</div>
+          ) : (
+            filteredGuides.map((guide) => (
+              <div key={guide.id} className="guide-card">
+                <div className="guide-header">
+                  <img
+                    src={guide.photo || fallbackGuide}
+                    alt={guide.name}
+                    className="guide-photo"
+                    loading="lazy"
+                    referrerPolicy="no-referrer"
+                    onError={(event) => {
+                      event.currentTarget.src = fallbackGuide;
+                    }}
+                  />
+                  {guide.certified && (
+                    <span className="certified-badge">✓ Certified</span>
+                  )}
+                </div>
 
-            <div className="guide-info">
-              <h3>{guide.name}</h3>
-              <p className="guide-experience">
-                {guide.experience} of experience
-              </p>
+                <div className="guide-info">
+                  <h3>{guide.name}</h3>
+                  <p className="guide-experience">
+                    {guide.experience} of experience
+                  </p>
 
-              <div className="guide-rating">
-                <span className="rating-stars">⭐ {guide.rating}</span>
-                <span className="rating-reviews">
-                  ({guide.reviewsCount} reviews)
-                </span>
-              </div>
-
-              <div className="guide-languages">
-                <strong>Languages:</strong>
-                <div className="lang-tags">
-                  {guide.languages.map((lang, index) => (
-                    <span key={index} className="lang-tag">
-                      {lang}
+                  <div className="guide-rating">
+                    <span className="rating-stars">⭐ {guide.rating}</span>
+                    <span className="rating-reviews">
+                      ({guide.reviewsCount} reviews)
                     </span>
-                  ))}
-                </div>
-              </div>
+                  </div>
 
-              <div className="guide-specializations">
-                <strong>Specializations:</strong>
-                <div className="spec-tags">
-                  {guide.specialization.map((spec, index) => (
-                    <span key={index} className="spec-tag">
-                      {spec}
+                  <div className="guide-languages">
+                    <strong>Languages:</strong>
+                    <div className="lang-tags">
+                      {guide.languages.map((lang, index) => (
+                        <span key={index} className="lang-tag">
+                          {lang}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="guide-specializations">
+                    <strong>Specializations:</strong>
+                    <div className="spec-tags">
+                      {guide.specialization.map((spec, index) => (
+                        <span key={index} className="spec-tag">
+                          {spec}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="guide-districts">
+                    <strong>Coverage:</strong> {guide.districts.join(", ")}
+                  </div>
+
+                  <p className="guide-description">{guide.description}</p>
+
+                  <div className="guide-footer">
+                    <div className="guide-price">
+                      <span className="price-label">Price:</span>
+                      <span className="price-value">
+                        {guide.pricePerDay}/day
+                      </span>
+                    </div>
+                    <span
+                      className={`availability ${guide.availability === "Available" ? "available" : "booked"}`}
+                    >
+                      {guide.availability}
                     </span>
-                  ))}
+                  </div>
+
+                  <div className="guide-actions">
+                    <a
+                      href={`tel:${guide.contact.phone}`}
+                      className="contact-btn phone-btn"
+                    >
+                      📞 Call
+                    </a>
+                    <a
+                      href={`https://wa.me/${guide.contact.whatsapp.replace(/\+/g, "")}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="contact-btn whatsapp-btn"
+                    >
+                      💬 WhatsApp
+                    </a>
+                    <a
+                      href={`mailto:${guide.contact.email}`}
+                      className="contact-btn email-btn"
+                    >
+                      ✉️ Email
+                    </a>
+                  </div>
                 </div>
               </div>
-
-              <div className="guide-districts">
-                <strong>Coverage:</strong> {guide.districts.join(", ")}
-              </div>
-
-              <p className="guide-description">{guide.description}</p>
-
-              <div className="guide-footer">
-                <div className="guide-price">
-                  <span className="price-label">Price:</span>
-                  <span className="price-value">{guide.pricePerDay}/day</span>
-                </div>
-                <span
-                  className={`availability ${guide.availability === "Available" ? "available" : "booked"}`}
-                >
-                  {guide.availability}
-                </span>
-              </div>
-
-              <div className="guide-actions">
-                <a
-                  href={`tel:${guide.contact.phone}`}
-                  className="contact-btn phone-btn"
-                >
-                  📞 Call
-                </a>
-                <a
-                  href={`https://wa.me/${guide.contact.whatsapp.replace(/\+/g, "")}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="contact-btn whatsapp-btn"
-                >
-                  💬 WhatsApp
-                </a>
-                <a
-                  href={`mailto:${guide.contact.email}`}
-                  className="contact-btn email-btn"
-                >
-                  ✉️ Email
-                </a>
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
+            ))
+          )}
+        </div>
+      )}
     </div>
   );
 };

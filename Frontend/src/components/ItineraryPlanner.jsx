@@ -1,11 +1,14 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import fallbackImage from "../assets/placeholder-tourism.svg";
-import { itineraryPlans } from "../data/srilankaData";
+import { fetchItineraryPlans } from "../api/api";
 import "./ItineraryPlanner.css";
 
 const ItineraryPlanner = () => {
   const [selectedPlan, setSelectedPlan] = useState(null);
   const [filterCategory, setFilterCategory] = useState("All");
+  const [plans, setPlans] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
 
   const categories = [
     "All",
@@ -16,10 +19,38 @@ const ItineraryPlanner = () => {
     "Complete Experience",
   ];
 
+  useEffect(() => {
+    const userId = localStorage.getItem("userId");
+    if (!userId) {
+      setError("Please log in to view itineraries.");
+      setLoading(false);
+      return;
+    }
+
+    let isActive = true;
+    fetchItineraryPlans()
+      .then((response) => {
+        if (!isActive) return;
+        setPlans(response.data || []);
+        setError("");
+      })
+      .catch(() => {
+        if (!isActive) return;
+        setError("Failed to load itineraries.");
+      })
+      .finally(() => {
+        if (isActive) setLoading(false);
+      });
+
+    return () => {
+      isActive = false;
+    };
+  }, []);
+
   const filteredPlans =
     filterCategory === "All"
-      ? itineraryPlans
-      : itineraryPlans.filter((plan) => plan.category === filterCategory);
+      ? plans
+      : plans.filter((plan) => plan.category === filterCategory);
 
   const handlePlanClick = (plan) => {
     setSelectedPlan(plan);
@@ -28,6 +59,14 @@ const ItineraryPlanner = () => {
   const handleBackToPlans = () => {
     setSelectedPlan(null);
   };
+
+  if (loading) {
+    return <div className="loading">Loading itineraries...</div>;
+  }
+
+  if (error) {
+    return <div className="error">{error}</div>;
+  }
 
   if (selectedPlan) {
     return (
@@ -181,40 +220,44 @@ const ItineraryPlanner = () => {
       </div>
 
       <div className="plans-grid">
-        {filteredPlans.map((plan) => (
-          <div
-            key={plan.id}
-            className="plan-card"
-            onClick={() => handlePlanClick(plan)}
-          >
-            <div className="plan-image">
-              <img
-                src={plan.coverImage}
-                alt={plan.name}
-                loading="lazy"
-                referrerPolicy="no-referrer"
-                onError={(event) => {
-                  event.currentTarget.src = fallbackImage;
-                }}
-              />
-              <span className="plan-duration">{plan.duration}</span>
-            </div>
-            <div className="plan-info">
-              <h3>{plan.name}</h3>
-              <p>{plan.description}</p>
-              <div className="plan-badges">
-                <span className="badge">{plan.difficulty}</span>
-                <span className="badge">{plan.category}</span>
+        {filteredPlans.length === 0 ? (
+          <div className="empty">No itineraries found.</div>
+        ) : (
+          filteredPlans.map((plan) => (
+            <div
+              key={plan.id}
+              className="plan-card"
+              onClick={() => handlePlanClick(plan)}
+            >
+              <div className="plan-image">
+                <img
+                  src={plan.coverImage}
+                  alt={plan.name}
+                  loading="lazy"
+                  referrerPolicy="no-referrer"
+                  onError={(event) => {
+                    event.currentTarget.src = fallbackImage;
+                  }}
+                />
+                <span className="plan-duration">{plan.duration}</span>
               </div>
-              <div className="plan-footer">
-                <span className="price-from">
-                  From {plan.estimatedCost.budget}
-                </span>
-                <button className="view-details-btn">View Details →</button>
+              <div className="plan-info">
+                <h3>{plan.name}</h3>
+                <p>{plan.description}</p>
+                <div className="plan-badges">
+                  <span className="badge">{plan.difficulty}</span>
+                  <span className="badge">{plan.category}</span>
+                </div>
+                <div className="plan-footer">
+                  <span className="price-from">
+                    From {plan.estimatedCost.budget}
+                  </span>
+                  <button className="view-details-btn">View Details →</button>
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))
+        )}
       </div>
     </div>
   );
