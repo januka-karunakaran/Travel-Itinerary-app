@@ -26,8 +26,6 @@ export default function Navbar() {
               }
             >
               Planner
-            </Link>
-            <Link to="/skyline" className="app-navbar__link">
             </NavLink>
             <NavLink
               to="/my-trips"
@@ -76,6 +74,14 @@ export default function Navbar() {
               }
             >
               Itineraries
+            </NavLink>
+            <NavLink
+              to="/bookings"
+              className={({ isActive }) =>
+                `app-navbar__link${isActive ? " app-navbar__link--active" : ""}`
+              }
+            >
+              Bookings
             </NavLink>
             <NavLink
               to="/guides"
