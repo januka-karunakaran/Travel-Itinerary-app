@@ -1,14 +1,17 @@
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-import { districts } from "../data/srilankaData";
+import { fetchDistricts } from "../api/api";
 import DistrictCard from "./DistrictCard";
 import TouristPlaceCard from "./TouristPlaceCard";
 import "./DistrictsView.css";
 
 const DistrictsView = () => {
+  const [districtsData, setDistrictsData] = useState([]);
   const [selectedDistrict, setSelectedDistrict] = useState(null);
   const [searchTerm, setSearchTerm] = useState("");
   const [filterCategory, setFilterCategory] = useState("All");
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
   const location = useLocation();
 
   const categories = [
@@ -21,7 +24,35 @@ const DistrictsView = () => {
     "Cultural",
   ];
 
-  const filteredDistricts = districts.filter(
+  useEffect(() => {
+    const userId = localStorage.getItem("userId");
+    if (!userId) {
+      setError("Please log in to view districts.");
+      setLoading(false);
+      return;
+    }
+
+    let isActive = true;
+    fetchDistricts()
+      .then((response) => {
+        if (!isActive) return;
+        setDistrictsData(response.data || []);
+        setError("");
+      })
+      .catch(() => {
+        if (!isActive) return;
+        setError("Failed to load districts.");
+      })
+      .finally(() => {
+        if (isActive) setLoading(false);
+      });
+
+    return () => {
+      isActive = false;
+    };
+  }, []);
+
+  const filteredDistricts = districtsData.filter(
     (district) =>
       district.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
       district.province.toLowerCase().includes(searchTerm.toLowerCase()),
@@ -31,7 +62,7 @@ const DistrictsView = () => {
     const districtName = location.state?.districtName;
     if (!districtName) return;
 
-    const match = districts.find(
+    const match = districtsData.find(
       (district) => district.name.toLowerCase() === districtName.toLowerCase(),
     );
 
@@ -39,7 +70,7 @@ const DistrictsView = () => {
       setSelectedDistrict(match);
       setSearchTerm(match.name);
     }
-  }, [location.state?.districtName]);
+  }, [location.state?.districtName, districtsData]);
 
   const handleDistrictClick = (district) => {
     setSelectedDistrict(district);
@@ -59,7 +90,11 @@ const DistrictsView = () => {
 
   return (
     <div className="districts-view">
-      {!selectedDistrict ? (
+      {loading ? (
+        <div className="loading">Loading districts...</div>
+      ) : error ? (
+        <div className="error">{error}</div>
+      ) : !selectedDistrict ? (
         <>
           <div className="districts-header">
             <h1>Explore Sri Lanka's 25 Districts</h1>
@@ -79,13 +114,17 @@ const DistrictsView = () => {
           </div>
 
           <div className="districts-grid">
-            {filteredDistricts.map((district) => (
-              <DistrictCard
-                key={district.id}
-                district={district}
-                onClick={() => handleDistrictClick(district)}
-              />
-            ))}
+            {filteredDistricts.length === 0 ? (
+              <div className="empty">No districts found.</div>
+            ) : (
+              filteredDistricts.map((district) => (
+                <DistrictCard
+                  key={district.id}
+                  district={district}
+                  onClick={() => handleDistrictClick(district)}
+                />
+              ))
+            )}
           </div>
         </>
       ) : (

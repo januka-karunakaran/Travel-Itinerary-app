@@ -1,0 +1,168 @@
+[
+  {
+    "id": 1,
+    "name": "Nimal Perera",
+    "photo": "https://i.pravatar.cc/150?img=12",
+    "languages": [
+      "English",
+      "Sinhala",
+      "German"
+    ],
+    "specialization": [
+      "Cultural Sites",
+      "Historical Tours",
+      "Photography"
+    ],
+    "experience": "15 years",
+    "districts": [
+      "Colombo",
+      "Kandy",
+      "Anuradhapura",
+      "Polonnaruwa"
+    ],
+    "rating": 4.9,
+    "reviewsCount": 247,
+    "pricePerDay": "USD 50-80",
+    "contact": {
+      "phone": "+94 77 123 4567",
+      "email": "nimal.guide@example.com",
+      "whatsapp": "+94771234567"
+    },
+    "availability": "Available",
+    "certified": true,
+    "description": "Expert in Cultural Triangle with deep knowledge of ancient Sri Lankan history."
+  },
+  {
+    "id": 2,
+    "name": "Amara Silva",
+    "photo": "https://i.pravatar.cc/150?img=5",
+    "languages": [
+      "English",
+      "Sinhala",
+      "French"
+    ],
+    "specialization": [
+      "Wildlife Safaris",
+      "Nature Tours",
+      "Bird Watching"
+    ],
+    "experience": "12 years",
+    "districts": [
+      "Yala",
+      "Wilpattu",
+      "Udawalawe",
+      "Bundala"
+    ],
+    "rating": 4.8,
+    "reviewsCount": 189,
+    "pricePerDay": "USD 60-90",
+    "contact": {
+      "phone": "+94 77 234 5678",
+      "email": "amara.wildlife@example.com",
+      "whatsapp": "+94772345678"
+    },
+    "availability": "Available",
+    "certified": true,
+    "description": "Wildlife expert specialized in leopard tracking and bird watching."
+  },
+  {
+    "id": 3,
+    "name": "Kumar Jayasinghe",
+    "photo": "https://i.pravatar.cc/150?img=33",
+    "languages": [
+      "English",
+      "Sinhala",
+      "Japanese"
+    ],
+    "specialization": [
+      "Hill Country",
+      "Tea Plantations",
+      "Trekking"
+    ],
+    "experience": "10 years",
+    "districts": [
+      "Nuwara Eliya",
+      "Ella",
+      "Kandy",
+      "Badulla"
+    ],
+    "rating": 4.7,
+    "reviewsCount": 156,
+    "pricePerDay": "USD 45-70",
+    "contact": {
+      "phone": "+94 77 345 6789",
+      "email": "kumar.hillcountry@example.com",
+      "whatsapp": "+94773456789"
+    },
+    "availability": "Booked until Feb 15",
+    "certified": true,
+    "description": "Hill country specialist with expertise in tea culture and trekking."
+  },
+  {
+    "id": 4,
+    "name": "Priya Fernando",
+    "photo": "https://i.pravatar.cc/150?img=47",
+    "languages": [
+      "English",
+      "Sinhala",
+      "Spanish",
+      "Italian"
+    ],
+    "specialization": [
+      "Beach Tours",
+      "Water Sports",
+      "Coastal Culture"
+    ],
+    "experience": "8 years",
+    "districts": [
+      "Galle",
+      "Matara",
+      "Hambantota",
+      "Trincomalee"
+    ],
+    "rating": 4.9,
+    "reviewsCount": 203,
+    "pricePerDay": "USD 55-85",
+    "contact": {
+      "phone": "+94 77 456 7890",
+      "email": "priya.coastal@example.com",
+      "whatsapp": "+94774567890"
+    },
+    "availability": "Available",
+    "certified": true,
+    "description": "Coastal expert specializing in southern beaches and Galle Fort."
+  },
+  {
+    "id": 5,
+    "name": "Rajesh Muthu",
+    "photo": "https://i.pravatar.cc/150?img=68",
+    "languages": [
+      "English",
+      "Tamil",
+      "Sinhala",
+      "Hindi"
+    ],
+    "specialization": [
+      "Northern Tours",
+      "Hindu Temples",
+      "Cultural Heritage"
+    ],
+    "experience": "14 years",
+    "districts": [
+      "Jaffna",
+      "Mannar",
+      "Trincomalee"
+    ],
+    "rating": 4.8,
+    "reviewsCount": 134,
+    "pricePerDay": "USD 50-75",
+    "contact": {
+      "phone": "+94 77 567 8901",
+      "email": "rajesh.northern@example.com",
+      "whatsapp": "+94775678901"
+    },
+    "availability": "Available",
+    "certified": true,
+    "description": "Northern region specialist with Tamil culture expertise."
+  }
+]

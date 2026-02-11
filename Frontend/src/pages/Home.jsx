@@ -1,60 +1,107 @@
-import { useMemo, useState } from "react";
-import { generateTrip } from "../api/api";
-import { districts } from "../data/srilankaData";
+import { useEffect, useMemo, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { tripAPI } from "../service/api";
+import { fetchDistricts } from "../api/api";
 
 export default function Home() {
   const [query, setQuery] = useState({
     destination: "",
-    days: 3,
-    budget: "Medium",
+    days: "",
+    budget: "",
   });
   const [itinerary, setItinerary] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  const [districtsData, setDistrictsData] = useState([]);
   const navigate = useNavigate();
+  const handleInputChange = (e) => {
+    setQuery({
+      ...query,
+      [e.target.name]: e.target.value,
+    });
+  };
 
-  const handlePlan = async () => {
-    setLoading(true);
-    setError("");
+  useEffect(() => {
     const userId = localStorage.getItem("userId");
-    const destination = query.destination.trim();
-    if (!destination) {
-      setError("Please enter a destination.");
-      setLoading(false);
+    if (!userId) {
       return;
     }
 
-    const matchedDistrict = districts.find(
-      (district) => district.name.toLowerCase() === destination.toLowerCase(),
-    );
-
-    if (matchedDistrict) {
-      navigate("/districts", {
-        state: {
-          districtName: matchedDistrict.name,
-        },
+    let isActive = true;
+    fetchDistricts()
+      .then((response) => {
+        if (!isActive) return;
+        setDistrictsData(response.data || []);
+      })
+      .catch(() => {
+        if (!isActive) return;
+        setDistrictsData([]);
       });
-      setLoading(false);
-      return;
-    }
+
+    return () => {
+      isActive = false;
+    };
+  }, []);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setError("");
+    setLoading(true);
 
     try {
-      const res = await generateTrip({ ...query, userId });
-      const planText = res.data.planText;
+      const userId = localStorage.getItem("userId");
+      if (!userId) {
+        setError("Please log in to generate an itinerary");
+        navigate("/login");
+        return;
+      }
+
+      const destination = query.destination.trim();
+      if (!destination) {
+        setError("Please enter a destination.");
+        return;
+      }
+
+      const matchedDistrict = districtsData.find(
+        (district) => district.name.toLowerCase() === destination.toLowerCase(),
+      );
+
+      if (matchedDistrict) {
+        navigate("/districts", {
+          state: {
+            districtName: matchedDistrict.name,
+          },
+        });
+        return;
+      }
+
+      const tripData = {
+        userId,
+        destination,
+        days: parseInt(query.days, 10),
+        budget: query.budget,
+      };
+
+      const response = await tripAPI.generate(tripData);
+      const planText = response.planText || "";
+
       setItinerary(planText);
       navigate("/plan", {
         state: {
           itinerary: planText,
-          destination: query.destination,
-          days: query.days,
-          budget: query.budget,
+          destination: response.destination || destination,
+          days: response.days ?? tripData.days,
+          budget: response.budget || tripData.budget,
+          tripId: response.id,
         },
       });
     } catch (err) {
-      setError("Error: The AI Service is currently unavailable.");
+      setError(
+        err.message || "Failed to generate itinerary. Please try again.",
+      );
+    } finally {
+      setLoading(false);
     }
-    setLoading(false);
   };
 
   const photoTiles = useMemo(() => {
@@ -93,16 +140,16 @@ export default function Home() {
       </section>
 
       <section className="home-grid">
-        <div className="home-form">
+        <form className="home-form" onSubmit={handleSubmit}>
           <div>
             <label>Destination</label>
             <input
               type="text"
+              name="destination"
               placeholder="Enter a city or country"
               value={query.destination}
-              onChange={(e) =>
-                setQuery({ ...query, destination: e.target.value })
-              }
+              onChange={handleInputChange}
+              required
             />
           </div>
           <div className="home-row">
@@ -110,31 +157,34 @@ export default function Home() {
               <label>Days</label>
               <input
                 type="number"
+                name="days"
                 min="1"
                 max="30"
                 value={query.days}
-                onChange={(e) =>
-                  setQuery({ ...query, days: Number(e.target.value) })
-                }
+                onChange={handleInputChange}
+                required
               />
             </div>
             <div>
               <label>Budget</label>
               <select
+                name="budget"
                 value={query.budget}
-                onChange={(e) => setQuery({ ...query, budget: e.target.value })}
+                onChange={handleInputChange}
+                required
               >
-                <option value="Low">Low</option>
-                <option value="Medium">Medium</option>
-                <option value="High">High</option>
+                <option value="">Select Budget</option>
+                <option value="Budget">Budget</option>
+                <option value="Mid-range">Mid-range</option>
+                <option value="Luxury">Luxury</option>
               </select>
             </div>
           </div>
-          <button type="button" onClick={handlePlan} disabled={loading}>
+          <button type="submit" disabled={loading}>
             {loading ? "AI is Planning..." : "Generate"}
           </button>
           {error && <div className="error-banner">{error}</div>}
-        </div>
+        </form>
 
         <div className="home-output">
           <div className="photo-strip">

@@ -1,0 +1,538 @@
+[
+  {
+    "id": 1,
+    "name": "3-Day Cultural Triangle Tour",
+    "description": "Explore ancient kingdoms and UNESCO World Heritage Sites",
+    "duration": "3 days / 2 nights",
+    "difficulty": "Easy",
+    "category": "Cultural & Historical",
+    "bestSeason": "Year-round",
+    "coverImage": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Gal_Vihara_1.jpg/1200px-Gal_Vihara_1.jpg",
+    "districts": [
+      "Anuradhapura",
+      "Polonnaruwa"
+    ],
+    "estimatedCost": {
+      "budget": "USD 200-300",
+      "midRange": "USD 400-600",
+      "luxury": "USD 800-1200"
+    },
+    "itinerary": [
+      {
+        "day": 1,
+        "title": "Colombo to Anuradhapura",
+        "description": "Travel to ancient capital and explore sacred Buddhist sites",
+        "places": [
+          "Sri Maha Bodhi",
+          "Ruwanwelisaya",
+          "Jetavanaramaya"
+        ],
+        "activities": [
+          "Visit sacred Bodhi tree",
+          "Explore ancient stupas",
+          "Evening at Isurumuniya Temple"
+        ],
+        "meals": "Breakfast, Lunch, Dinner",
+        "accommodation": "Anuradhapura hotels",
+        "travelTime": "4.5 hours from Colombo"
+      },
+      {
+        "day": 2,
+        "title": "Anuradhapura to Polonnaruwa",
+        "description": "Visit medieval capital with well-preserved ruins",
+        "places": [
+          "Gal Vihara",
+          "Parakrama Samudra",
+          "Royal Palace"
+        ],
+        "activities": [
+          "Explore Polonnaruwa ruins",
+          "Bicycle tour of ancient city",
+          "Photography at sunset"
+        ],
+        "meals": "Breakfast, Lunch, Dinner",
+        "accommodation": "Polonnaruwa/Sigiriya hotels",
+        "travelTime": "1.5 hours"
+      },
+      {
+        "day": 3,
+        "title": "Return to Colombo via Dambulla",
+        "description": "Visit cave temple and return",
+        "places": [
+          "Dambulla Cave Temple",
+          "Spice Garden"
+        ],
+        "activities": [
+          "Explore cave temple",
+          "Spice garden tour",
+          "Shopping for souvenirs"
+        ],
+        "meals": "Breakfast, Lunch",
+        "accommodation": "N/A",
+        "travelTime": "4 hours to Colombo"
+      }
+    ],
+    "included": [
+      "Accommodation (2 nights)",
+      "Transportation with driver",
+      "Entrance fees to sites",
+      "Breakfast daily"
+    ],
+    "notIncluded": [
+      "Lunch and dinner",
+      "Personal expenses",
+      "Tips and gratuities"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "5-Day Hill Country Tour",
+    "description": "Cool climate, tea plantations, and scenic train rides",
+    "duration": "5 days / 4 nights",
+    "difficulty": "Moderate",
+    "category": "Nature & Scenery",
+    "bestSeason": "December to March",
+    "coverImage": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/World%27s_End_Horton_Plains.jpg/1200px-World%27s_End_Horton_Plains.jpg",
+    "districts": [
+      "Kandy",
+      "Nuwara Eliya"
+    ],
+    "estimatedCost": {
+      "budget": "USD 350-500",
+      "midRange": "USD 700-1000",
+      "luxury": "USD 1500-2200"
+    },
+    "itinerary": [
+      {
+        "day": 1,
+        "title": "Colombo to Kandy",
+        "description": "Journey to cultural capital in the hills",
+        "places": [
+          "Temple of the Tooth",
+          "Kandy Lake"
+        ],
+        "activities": [
+          "Visit sacred temple",
+          "Walk around Kandy Lake",
+          "Cultural dance show"
+        ],
+        "meals": "Breakfast, Dinner",
+        "accommodation": "Kandy hotels",
+        "travelTime": "3 hours from Colombo"
+      },
+      {
+        "day": 2,
+        "title": "Kandy Exploration",
+        "description": "Explore botanical gardens and surroundings",
+        "places": [
+          "Peradeniya Botanical Gardens",
+          "Bahirawakanda"
+        ],
+        "activities": [
+          "Botanical garden tour",
+          "Tea museum visit",
+          "Panoramic city views"
+        ],
+        "meals": "Breakfast, Dinner",
+        "accommodation": "Kandy hotels",
+        "travelTime": "Local sightseeing"
+      },
+      {
+        "day": 3,
+        "title": "Kandy to Nuwara Eliya",
+        "description": "Journey through tea country to Little England",
+        "places": [
+          "Gregory Lake",
+          "Pedro Tea Estate"
+        ],
+        "activities": [
+          "Scenic drive through tea plantations",
+          "Boat ride on Gregory Lake",
+          "Tea factory tour"
+        ],
+        "meals": "Breakfast, Dinner",
+        "accommodation": "Nuwara Eliya hotels",
+        "travelTime": "2.5 hours"
+      },
+      {
+        "day": 4,
+        "title": "Horton Plains Excursion",
+        "description": "Early morning trek to World's End",
+        "places": [
+          "Horton Plains",
+          "World's End",
+          "Baker's Falls"
+        ],
+        "activities": [
+          "Trek to World's End",
+          "Visit Baker's Falls",
+          "Wildlife spotting"
+        ],
+        "meals": "Breakfast, Lunch, Dinner",
+        "accommodation": "Nuwara Eliya hotels",
+        "travelTime": "1 hour to Horton Plains"
+      },
+      {
+        "day": 5,
+        "title": "Return Journey",
+        "description": "Scenic return to Colombo",
+        "places": [
+          "Victoria Park"
+        ],
+        "activities": [
+          "Morning walk in Victoria Park",
+          "Last-minute shopping",
+          "Return journey"
+        ],
+        "meals": "Breakfast",
+        "accommodation": "N/A",
+        "travelTime": "5 hours to Colombo"
+      }
+    ],
+    "included": [
+      "Accommodation (4 nights)",
+      "Transportation",
+      "Entrance fees",
+      "Breakfast daily"
+    ],
+    "notIncluded": [
+      "Lunch (except Day 4)",
+      "Dinner on Day 5",
+      "Personal expenses"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "4-Day Southern Beach Tour",
+    "description": "Beaches, Galle Fort, and water sports",
+    "duration": "4 days / 3 nights",
+    "difficulty": "Easy",
+    "category": "Beach & Relaxation",
+    "bestSeason": "November to April",
+    "coverImage": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Galle_Fort_-_panoramio.jpg/1200px-Galle_Fort_-_panoramio.jpg",
+    "districts": [
+      "Galle",
+      "Matara"
+    ],
+    "estimatedCost": {
+      "budget": "USD 250-400",
+      "midRange": "USD 550-800",
+      "luxury": "USD 1200-1800"
+    },
+    "itinerary": [
+      {
+        "day": 1,
+        "title": "Colombo to Galle",
+        "description": "Coastal drive to historic Galle",
+        "places": [
+          "Galle Fort",
+          "Lighthouse"
+        ],
+        "activities": [
+          "Explore Galle Fort",
+          "Walk on fort ramparts",
+          "Sunset at lighthouse"
+        ],
+        "meals": "Breakfast, Dinner",
+        "accommodation": "Galle hotels",
+        "travelTime": "2.5 hours"
+      },
+      {
+        "day": 2,
+        "title": "Unawatuna Beach Day",
+        "description": "Beach relaxation and water activities",
+        "places": [
+          "Unawatuna Beach",
+          "Japanese Peace Pagoda"
+        ],
+        "activities": [
+          "Swimming and snorkeling",
+          "Visit peace pagoda",
+          "Beach hopping"
+        ],
+        "meals": "Breakfast, Dinner",
+        "accommodation": "Unawatuna hotels",
+        "travelTime": "15 minutes"
+      },
+      {
+        "day": 3,
+        "title": "Mirissa & Whale Watching",
+        "description": "Whale watching and beach",
+        "places": [
+          "Mirissa Beach"
+        ],
+        "activities": [
+          "Whale watching tour",
+          "Surfing lessons",
+          "Beach sunset"
+        ],
+        "meals": "Breakfast, Dinner",
+        "accommodation": "Mirissa hotels",
+        "travelTime": "1 hour"
+      },
+      {
+        "day": 4,
+        "title": "Tangalle & Return",
+        "description": "Southern beaches and return",
+        "places": [
+          "Tangalle Beach",
+          "Dondra Lighthouse"
+        ],
+        "activities": [
+          "Turtle watching",
+          "Visit southernmost point",
+          "Beach relaxation"
+        ],
+        "meals": "Breakfast",
+        "accommodation": "N/A",
+        "travelTime": "Return journey"
+      }
+    ],
+    "included": [
+      "Accommodation (3 nights)",
+      "Transportation",
+      "Whale watching tour",
+      "Breakfast daily"
+    ],
+    "notIncluded": [
+      "Lunch and dinner (except included)",
+      "Water sports equipment",
+      "Personal expenses"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "7-Day Complete Sri Lanka Tour",
+    "description": "Cultural sites, hill country, wildlife, and beaches",
+    "duration": "7 days / 6 nights",
+    "difficulty": "Moderate",
+    "category": "Complete Experience",
+    "bestSeason": "December to March",
+    "coverImage": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Temple_of_the_Tooth.jpg/1200px-Temple_of_the_Tooth.jpg",
+    "districts": [
+      "Colombo",
+      "Kandy",
+      "Nuwara Eliya",
+      "Hambantota",
+      "Galle"
+    ],
+    "estimatedCost": {
+      "budget": "USD 600-900",
+      "midRange": "USD 1200-1800",
+      "luxury": "USD 2500-4000"
+    },
+    "itinerary": [
+      {
+        "day": 1,
+        "title": "Arrive Colombo",
+        "description": "City tour of commercial capital",
+        "places": [
+          "Galle Face Green",
+          "Gangaramaya Temple"
+        ],
+        "activities": [
+          "City sightseeing",
+          "Temple visit",
+          "Shopping"
+        ],
+        "meals": "Dinner",
+        "accommodation": "Colombo hotels",
+        "travelTime": "Airport transfer"
+      },
+      {
+        "day": 2,
+        "title": "Colombo to Kandy",
+        "description": "Cultural capital exploration",
+        "places": [
+          "Pinnawala Elephant Orphanage",
+          "Temple of the Tooth"
+        ],
+        "activities": [
+          "Elephant bathing",
+          "Sacred temple visit",
+          "Cultural show"
+        ],
+        "meals": "Breakfast, Dinner",
+        "accommodation": "Kandy hotels",
+        "travelTime": "4 hours"
+      },
+      {
+        "day": 3,
+        "title": "Kandy to Nuwara Eliya",
+        "description": "Hill country journey",
+        "places": [
+          "Tea Plantation",
+          "Gregory Lake"
+        ],
+        "activities": [
+          "Tea factory tour",
+          "Scenic drive",
+          "Boat ride"
+        ],
+        "meals": "Breakfast, Dinner",
+        "accommodation": "Nuwara Eliya hotels",
+        "travelTime": "2.5 hours"
+      },
+      {
+        "day": 4,
+        "title": "Nuwara Eliya to Yala",
+        "description": "Travel to wildlife zone",
+        "places": [
+          "Yala area"
+        ],
+        "activities": [
+          "Scenic viewpoints",
+          "Waterfall visit",
+          "Prepare for safari"
+        ],
+        "meals": "Breakfast, Dinner",
+        "accommodation": "Yala hotels",
+        "travelTime": "4 hours"
+      },
+      {
+        "day": 5,
+        "title": "Yala Safari",
+        "description": "Wildlife safari experience",
+        "places": [
+          "Yala National Park"
+        ],
+        "activities": [
+          "Early morning safari",
+          "Leopard spotting",
+          "Wildlife photography"
+        ],
+        "meals": "Breakfast, Dinner",
+        "accommodation": "Beach hotels",
+        "travelTime": "Safari + travel"
+      },
+      {
+        "day": 6,
+        "title": "Galle Fort",
+        "description": "Historic fort and beaches",
+        "places": [
+          "Galle Fort",
+          "Unawatuna Beach"
+        ],
+        "activities": [
+          "Fort walking tour",
+          "Beach relaxation",
+          "Shopping"
+        ],
+        "meals": "Breakfast, Dinner",
+        "accommodation": "Galle hotels",
+        "travelTime": "2 hours"
+      },
+      {
+        "day": 7,
+        "title": "Return to Colombo",
+        "description": "Coastal drive back",
+        "places": [
+          "Turtle Hatchery"
+        ],
+        "activities": [
+          "Turtle hatchery visit",
+          "Last shopping",
+          "Departure"
+        ],
+        "meals": "Breakfast",
+        "accommodation": "N/A",
+        "travelTime": "2.5 hours"
+      }
+    ],
+    "included": [
+      "Accommodation (6 nights)",
+      "All transportation",
+      "Yala safari",
+      "Entrance fees",
+      "Breakfast daily",
+      "Airport transfers"
+    ],
+    "notIncluded": [
+      "Lunch daily",
+      "Dinner on Day 7",
+      "Optional activities"
+    ]
+  },
+  {
+    "id": 5,
+    "name": "3-Day Jaffna Cultural Tour",
+    "description": "Explore Tamil culture, Hindu temples, and northern heritage",
+    "duration": "3 days / 2 nights",
+    "difficulty": "Easy",
+    "category": "Cultural & Heritage",
+    "bestSeason": "November to March",
+    "coverImage": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Nallur_Temple.jpg/1200px-Nallur_Temple.jpg",
+    "districts": [
+      "Jaffna"
+    ],
+    "estimatedCost": {
+      "budget": "USD 180-250",
+      "midRange": "USD 350-500",
+      "luxury": "USD 700-1000"
+    },
+    "itinerary": [
+      {
+        "day": 1,
+        "title": "Arrive Jaffna",
+        "description": "Explore Jaffna city and fort",
+        "places": [
+          "Jaffna Fort",
+          "Jaffna Library"
+        ],
+        "activities": [
+          "Fort exploration",
+          "Library visit",
+          "Local market tour"
+        ],
+        "meals": "Lunch, Dinner",
+        "accommodation": "Jaffna hotels",
+        "travelTime": "Flight/drive from Colombo"
+      },
+      {
+        "day": 2,
+        "title": "Temple & Culture",
+        "description": "Hindu temples and cultural sites",
+        "places": [
+          "Nallur Kandaswamy Temple",
+          "Nagadeepa Temple"
+        ],
+        "activities": [
+          "Temple visits",
+          "Traditional food tasting",
+          "Cultural performances"
+        ],
+        "meals": "Breakfast, Lunch, Dinner",
+        "accommodation": "Jaffna hotels",
+        "travelTime": "Local sightseeing"
+      },
+      {
+        "day": 3,
+        "title": "Casuarina Beach & Return",
+        "description": "Beach visit and departure",
+        "places": [
+          "Casuarina Beach",
+          "Keerimalai Hot Springs"
+        ],
+        "activities": [
+          "Beach relaxation",
+          "Hot springs visit",
+          "Souvenir shopping"
+        ],
+        "meals": "Breakfast",
+        "accommodation": "N/A",
+        "travelTime": "Return journey"
+      }
+    ],
+    "included": [
+      "Accommodation (2 nights)",
+      "Transportation",
+      "Local guide",
+      "Breakfast daily"
+    ],
+    "notIncluded": [
+      "Flights",
+      "Some meals",
+      "Personal expenses"
+    ]
+  }
+]

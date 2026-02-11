@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
 import { useNavigate, Link } from "react-router-dom";
+import { loginUser } from "../api/api";
 
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [rememberMe, setRememberMe] = useState(false);
+  const [error, setError] = useState("");
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -15,14 +16,9 @@ export default function Login() {
 
   const handleLogin = async (e) => {
     e.preventDefault();
+    setError("");
     try {
-      const response = await axios.post(
-        "http://localhost:8080/api/auth/login",
-        {
-          email,
-          password,
-        },
-      );
+      const response = await loginUser({ email, password });
 
       // Check if response contains the user ID from MongoDB
       const userId = response.data?.userId || response.data?.id;
@@ -37,10 +33,16 @@ export default function Login() {
 
         alert("Login Successful! Redirecting...");
         navigate("/home"); // THIS MOVES YOU TO THE NEXT PAGE
+      } else {
+        setError("Login failed. Missing user information from server.");
       }
     } catch (error) {
       console.error("Login Error:", error);
-      alert(error.response?.data || "Login failed. Check your connection.");
+      const message =
+        error.response?.data?.message ||
+        error.response?.data ||
+        "Login failed. Check your connection.";
+      setError(message);
     }
   };
 
@@ -109,6 +111,7 @@ export default function Login() {
             <button type="submit" className="primary-btn">
               Login
             </button>
+            {error && <div className="error-banner">{error}</div>}
 
             <div className="auth-footer">
               <span>Do not have an account?</span>

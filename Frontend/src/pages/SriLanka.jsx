@@ -1,5 +1,6 @@
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { districts } from "../data/srilankaData";
+import { fetchDistricts } from "../api/api";
 import fallbackImage from "../assets/placeholder-tourism.svg";
 
 const buildMapsLink = (coordinates) => {
@@ -10,6 +11,38 @@ const buildMapsLink = (coordinates) => {
 };
 
 export default function SriLanka() {
+  const [districts, setDistricts] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
+
+  useEffect(() => {
+    const userId = localStorage.getItem("userId");
+    if (!userId) {
+      setError("Please log in to view districts.");
+      setLoading(false);
+      return;
+    }
+
+    let isActive = true;
+    fetchDistricts()
+      .then((response) => {
+        if (!isActive) return;
+        setDistricts(response.data || []);
+        setError("");
+      })
+      .catch(() => {
+        if (!isActive) return;
+        setError("Failed to load districts.");
+      })
+      .finally(() => {
+        if (isActive) setLoading(false);
+      });
+
+    return () => {
+      isActive = false;
+    };
+  }, []);
+
   return (
     <div className="districts-page">
       <section className="districts-hero">
@@ -41,68 +74,76 @@ export default function SriLanka() {
       </section>
 
       <section className="districts-grid">
-        {districts.map((district) => (
-          <article key={district.id} className="district-card">
-            <header className="district-header">
-              <div>
-                <h3>{district.name}</h3>
-                <p className="district-province">{district.province}</p>
-              </div>
-              <a
-                className="district-map"
-                href={buildMapsLink(district.coordinates)}
-                target="_blank"
-                rel="noreferrer"
-              >
-                Open map
-              </a>
-            </header>
-
-            <p className="district-description">{district.description}</p>
-            <div className="district-meta">
-              <span>{district.touristPlaces.length} places</span>
-            </div>
-
-            <div className="district-places">
-              {district.touristPlaces.map((place) => (
-                <div key={place.id} className="district-place">
-                  <div className="district-place__image">
-                    <img
-                      src={place.images?.[0] || fallbackImage}
-                      alt={place.name}
-                      loading="lazy"
-                      onError={(event) => {
-                        event.currentTarget.src = fallbackImage;
-                      }}
-                    />
-                  </div>
-                  <div>
-                    <div className="district-place__title">
-                      <h4>{place.name}</h4>
-                      <span className="district-place__tag">
-                        {place.category}
-                      </span>
-                    </div>
-                    <p>{place.description}</p>
-                    <div className="district-place__links">
-                      <a
-                        href={
-                          place.googleMapsLink ||
-                          buildMapsLink(place.coordinates)
-                        }
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        Google maps
-                      </a>
-                      <span>{place.bestTimeToVisit}</span>
-                    </div>
-                  </div>
+        {loading ? (
+          <div className="loading">Loading districts...</div>
+        ) : error ? (
+          <div className="error">{error}</div>
+        ) : districts.length === 0 ? (
+          <div className="empty">No districts found.</div>
+        ) : (
+          districts.map((district) => (
+            <article key={district.id} className="district-card">
+              <header className="district-header">
+                <div>
+                  <h3>{district.name}</h3>
+                  <p className="district-province">{district.province}</p>
                 </div>
-              ))}
-            </div>
-          </article>
-        ))}
+                <a
+                  className="district-map"
+                  href={buildMapsLink(district.coordinates)}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Open map
+                </a>
+              </header>
+
+              <p className="district-description">{district.description}</p>
+              <div className="district-meta">
+                <span>{district.touristPlaces.length} places</span>
+              </div>
+
+              <div className="district-places">
+                {district.touristPlaces.map((place) => (
+                  <div key={place.id} className="district-place">
+                    <div className="district-place__image">
+                      <img
+                        src={place.images?.[0] || fallbackImage}
+                        alt={place.name}
+                        loading="lazy"
+                        onError={(event) => {
+                          event.currentTarget.src = fallbackImage;
+                        }}
+                      />
+                    </div>
+                    <div>
+                      <div className="district-place__title">
+                        <h4>{place.name}</h4>
+                        <span className="district-place__tag">
+                          {place.category}
+                        </span>
+                      </div>
+                      <p>{place.description}</p>
+                      <div className="district-place__links">
+                        <a
+                          href={
+                            place.googleMapsLink ||
+                            buildMapsLink(place.coordinates)
+                          }
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          Google maps
+                        </a>
+                        <span>{place.bestTimeToVisit}</span>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </article>
+          ))
+        )}
       </section>
     </div>
   );
