@@ -18,6 +18,8 @@ import SriLanka from "./pages/SriLanka";
 import Districts from "./pages/Districts";
 import Itineraries from "./pages/Itineraries";
 import Guides from "./pages/Guides";
+import BookTour from "./pages/BookTour";
+import Bookings from "./pages/Bookings";
 
 function AppLayout() {
   const location = useLocation();
@@ -98,6 +100,22 @@ function AppLayout() {
             element={
               <ProtectedRoute>
                 <Itineraries />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/book-tour"
+            element={
+              <ProtectedRoute>
+                <BookTour />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/bookings"
+            element={
+              <ProtectedRoute>
+                <Bookings />
               </ProtectedRoute>
             }
           />

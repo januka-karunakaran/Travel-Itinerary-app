@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import fallbackImage from "../assets/placeholder-tourism.svg";
 import { fetchItineraryPlans } from "../api/api";
 import "./ItineraryPlanner.css";
 
 const ItineraryPlanner = () => {
+  const navigate = useNavigate();
   const [selectedPlan, setSelectedPlan] = useState(null);
   const [filterCategory, setFilterCategory] = useState("All");
   const [plans, setPlans] = useState([]);
@@ -58,6 +60,11 @@ const ItineraryPlanner = () => {
 
   const handleBackToPlans = () => {
     setSelectedPlan(null);
+  };
+
+  const handleBookNow = () => {
+    if (!selectedPlan) return;
+    navigate("/book-tour", { state: { plan: selectedPlan } });
   };
 
   if (loading) {
@@ -141,7 +148,9 @@ const ItineraryPlanner = () => {
               </ul>
             </div>
 
-            <button className="book-button">Book This Tour</button>
+            <button className="book-button" onClick={handleBookNow}>
+              Book This Tour
+            </button>
           </div>
 
           <div className="plan-main">

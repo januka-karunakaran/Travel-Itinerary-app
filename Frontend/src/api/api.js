@@ -10,3 +10,5 @@ export const fetchUserTrips = (userId) => API.get(`/trips/user/${userId}`);
 export const fetchDistricts = () => API.get("/content/districts");
 export const fetchItineraryPlans = () => API.get("/content/itineraries");
 export const fetchTourGuides = () => API.get("/content/guides");
+export const createBooking = (data) => API.post("/bookings", data);
+export const fetchBookings = (userId) => API.get(`/bookings/user/${userId}`);
