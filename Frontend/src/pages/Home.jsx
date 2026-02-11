@@ -172,6 +172,7 @@ export default function Home() {
                 value={query.budget}
                 onChange={handleInputChange}
                 required
+                className="planner-budget-select"
               >
                 <option value="">Select Budget</option>
                 <option value="Budget">Budget</option>

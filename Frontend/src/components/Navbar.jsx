@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 
 export default function Navbar() {
   const navigate = useNavigate();
@@ -19,27 +19,72 @@ export default function Navbar() {
       <div className="app-navbar__links">
         {isLoggedIn ? (
           <>
-            <Link to="/home" className="app-navbar__link">
+            <NavLink
+              to="/home"
+              className={({ isActive }) =>
+                `app-navbar__link${isActive ? " app-navbar__link--active" : ""}`
+              }
+            >
               Planner
             </Link>
             <Link to="/skyline" className="app-navbar__link">
+            </NavLink>
+            <NavLink
+              to="/my-trips"
+              className={({ isActive }) =>
+                `app-navbar__link${isActive ? " app-navbar__link--active" : ""}`
+              }
+            >
+              History
+            </NavLink>
+            <NavLink
+              to="/skyline"
+              className={({ isActive }) =>
+                `app-navbar__link${isActive ? " app-navbar__link--active" : ""}`
+              }
+            >
               Skyline
-            </Link>
-            <Link to="/food" className="app-navbar__link">
+            </NavLink>
+            <NavLink
+              to="/food"
+              className={({ isActive }) =>
+                `app-navbar__link${isActive ? " app-navbar__link--active" : ""}`
+              }
+            >
               Food
-            </Link>
-            <Link to="/culture" className="app-navbar__link">
+            </NavLink>
+            <NavLink
+              to="/culture"
+              className={({ isActive }) =>
+                `app-navbar__link${isActive ? " app-navbar__link--active" : ""}`
+              }
+            >
               Culture
-            </Link>
-            <Link to="/districts" className="app-navbar__link">
+            </NavLink>
+            <NavLink
+              to="/districts"
+              className={({ isActive }) =>
+                `app-navbar__link${isActive ? " app-navbar__link--active" : ""}`
+              }
+            >
               Districts
-            </Link>
-            <Link to="/itineraries" className="app-navbar__link">
+            </NavLink>
+            <NavLink
+              to="/itineraries"
+              className={({ isActive }) =>
+                `app-navbar__link${isActive ? " app-navbar__link--active" : ""}`
+              }
+            >
               Itineraries
-            </Link>
-            <Link to="/guides" className="app-navbar__link">
+            </NavLink>
+            <NavLink
+              to="/guides"
+              className={({ isActive }) =>
+                `app-navbar__link${isActive ? " app-navbar__link--active" : ""}`
+              }
+            >
               Guides
-            </Link>
+            </NavLink>
             <button
               type="button"
               onClick={handleLogout}
@@ -50,12 +95,22 @@ export default function Navbar() {
           </>
         ) : (
           <>
-            <Link to="/" className="app-navbar__link">
+            <NavLink
+              to="/"
+              className={({ isActive }) =>
+                `app-navbar__link${isActive ? " app-navbar__link--active" : ""}`
+              }
+            >
               Login
-            </Link>
-            <Link to="/signup" className="app-navbar__link">
+            </NavLink>
+            <NavLink
+              to="/signup"
+              className={({ isActive }) =>
+                `app-navbar__link${isActive ? " app-navbar__link--active" : ""}`
+              }
+            >
               Sign Up
-            </Link>
+            </NavLink>
           </>
         )}
       </div>
