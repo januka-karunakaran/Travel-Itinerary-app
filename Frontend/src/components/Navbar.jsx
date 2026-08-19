@@ -28,14 +28,6 @@ export default function Navbar() {
               Planner
             </NavLink>
             <NavLink
-              to="/my-trips"
-              className={({ isActive }) =>
-                `app-navbar__link${isActive ? " app-navbar__link--active" : ""}`
-              }
-            >
-              History
-            </NavLink>
-            <NavLink
               to="/skyline"
               className={({ isActive }) =>
                 `app-navbar__link${isActive ? " app-navbar__link--active" : ""}`

@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { tripAPI } from "../service/api";
-import { fetchDistricts } from "../api/api";
+import { fetchDistricts, fetchSystemOverview } from "../api/api";
 
 export default function Home() {
   const [query, setQuery] = useState({
@@ -13,6 +13,7 @@ export default function Home() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [districtsData, setDistrictsData] = useState([]);
+  const [overview, setOverview] = useState(null);
   const navigate = useNavigate();
   const handleInputChange = (e) => {
     setQuery({
@@ -36,6 +37,24 @@ export default function Home() {
       .catch(() => {
         if (!isActive) return;
         setDistrictsData([]);
+      });
+
+    return () => {
+      isActive = false;
+    };
+  }, []);
+
+  useEffect(() => {
+    let isActive = true;
+
+    fetchSystemOverview()
+      .then((response) => {
+        if (!isActive) return;
+        setOverview(response.data || null);
+      })
+      .catch(() => {
+        if (!isActive) return;
+        setOverview(null);
       });
 
     return () => {
@@ -136,6 +155,22 @@ export default function Home() {
             Tell us where you want to go and how long you have. We will craft a
             day-by-day itinerary in seconds.
           </p>
+          {overview && (
+            <div className="home-summary" style={{ marginTop: "18px" }}>
+              <div className="home-summary__item">
+                <strong>{overview.trips}</strong>
+                <span>Trips Planned</span>
+              </div>
+              <div className="home-summary__item">
+                <strong>{overview.bookings}</strong>
+                <span>Bookings Created</span>
+              </div>
+              <div className="home-summary__item">
+                <strong>{overview.guides}</strong>
+                <span>Guides Listed</span>
+              </div>
+            </div>
+          )}
         </div>
       </section>
 

@@ -1,6 +1,8 @@
 import axios from "axios";
 
-const API = axios.create({ baseURL: "http://localhost:8080/api" });
+const API = axios.create({
+  baseURL: import.meta.env.VITE_API_URL || "http://localhost:8080/api",
+});
 
 export const loginUser = (data) => API.post("/auth/login", data);
 export const signupUser = (data) => API.post("/auth/signup", data);
@@ -12,3 +14,4 @@ export const fetchItineraryPlans = () => API.get("/content/itineraries");
 export const fetchTourGuides = () => API.get("/content/guides");
 export const createBooking = (data) => API.post("/bookings", data);
 export const fetchBookings = (userId) => API.get(`/bookings/user/${userId}`);
+export const fetchSystemOverview = () => API.get("/system/overview");
