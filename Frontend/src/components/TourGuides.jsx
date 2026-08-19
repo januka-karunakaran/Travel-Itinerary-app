@@ -9,6 +9,7 @@ const TourGuides = () => {
   const [guides, setGuides] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
+  const userId = typeof window !== "undefined" ? localStorage.getItem("userId") : null;
 
   const specializations = [
     "All",
@@ -20,12 +21,7 @@ const TourGuides = () => {
   ];
 
   useEffect(() => {
-    const userId = localStorage.getItem("userId");
-    if (!userId) {
-      setError("Please log in to view tour guides.");
-      setLoading(false);
-      return;
-    }
+    if (!userId) return;
 
     let isActive = true;
     fetchTourGuides()
@@ -45,7 +41,11 @@ const TourGuides = () => {
     return () => {
       isActive = false;
     };
-  }, []);
+  }, [userId]);
+
+  if (!userId) {
+    return <div className="error">Please log in to view tour guides.</div>;
+  }
 
   const normalizedSearch = search.trim().toLowerCase();
   const filteredGuides = guides.filter((guide) => {

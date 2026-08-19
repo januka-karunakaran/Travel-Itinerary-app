@@ -11,6 +11,7 @@ const ItineraryPlanner = () => {
   const [plans, setPlans] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
+  const userId = typeof window !== "undefined" ? localStorage.getItem("userId") : null;
 
   const categories = [
     "All",
@@ -22,12 +23,7 @@ const ItineraryPlanner = () => {
   ];
 
   useEffect(() => {
-    const userId = localStorage.getItem("userId");
-    if (!userId) {
-      setError("Please log in to view itineraries.");
-      setLoading(false);
-      return;
-    }
+    if (!userId) return;
 
     let isActive = true;
     fetchItineraryPlans()
@@ -47,7 +43,11 @@ const ItineraryPlanner = () => {
     return () => {
       isActive = false;
     };
-  }, []);
+  }, [userId]);
+
+  if (!userId) {
+    return <div className="error">Please log in to view itineraries.</div>;
+  }
 
   const filteredPlans =
     filterCategory === "All"

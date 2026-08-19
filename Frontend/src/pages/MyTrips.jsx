@@ -63,7 +63,7 @@ export default function MyTrips() {
         const exists = prev.some((item) => item.id === trip.id);
         return exists ? prev : [trip, ...prev];
       });
-    } catch (err) {
+    } catch {
       setError(
         "Error: The AI Service is currently unavailable. Please try again later.",
       );
