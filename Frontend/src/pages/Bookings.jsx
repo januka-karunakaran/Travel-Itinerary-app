@@ -6,14 +6,10 @@ export default function Bookings() {
   const [bookings, setBookings] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
+  const userId = typeof window !== "undefined" ? localStorage.getItem("userId") : null;
 
   useEffect(() => {
-    const userId = localStorage.getItem("userId");
-    if (!userId) {
-      setError("Please log in to view your bookings.");
-      setLoading(false);
-      return;
-    }
+    if (!userId) return;
 
     let isActive = true;
     fetchBookings(userId)
@@ -33,7 +29,11 @@ export default function Bookings() {
     return () => {
       isActive = false;
     };
-  }, []);
+  }, [userId]);
+
+  if (!userId) {
+    return <div className="error">Please log in to view your bookings.</div>;
+  }
 
   return (
     <div className="bookings-page">

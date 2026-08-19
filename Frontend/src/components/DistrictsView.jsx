@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { fetchDistricts } from "../api/api";
 import DistrictCard from "./DistrictCard";
@@ -13,6 +13,23 @@ const DistrictsView = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
   const location = useLocation();
+  const userId = typeof window !== "undefined" ? localStorage.getItem("userId") : null;
+
+  const locationSelectedDistrict = useMemo(() => {
+    const districtName = location.state?.districtName;
+    if (!districtName || districtsData.length === 0) {
+      return null;
+    }
+
+    return (
+      districtsData.find(
+        (district) =>
+          district.name.toLowerCase() === districtName.toLowerCase(),
+      ) || null
+    );
+  }, [location.state?.districtName, districtsData]);
+
+  const activeDistrict = selectedDistrict || locationSelectedDistrict;
 
   const categories = [
     "All",
@@ -25,12 +42,7 @@ const DistrictsView = () => {
   ];
 
   useEffect(() => {
-    const userId = localStorage.getItem("userId");
-    if (!userId) {
-      setError("Please log in to view districts.");
-      setLoading(false);
-      return;
-    }
+    if (!userId) return;
 
     let isActive = true;
     fetchDistricts()
@@ -50,27 +62,17 @@ const DistrictsView = () => {
     return () => {
       isActive = false;
     };
-  }, []);
+  }, [userId]);
+
+  if (!userId) {
+    return <div className="error">Please log in to view districts.</div>;
+  }
 
   const filteredDistricts = districtsData.filter(
     (district) =>
       district.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
       district.province.toLowerCase().includes(searchTerm.toLowerCase()),
   );
-
-  useEffect(() => {
-    const districtName = location.state?.districtName;
-    if (!districtName) return;
-
-    const match = districtsData.find(
-      (district) => district.name.toLowerCase() === districtName.toLowerCase(),
-    );
-
-    if (match) {
-      setSelectedDistrict(match);
-      setSearchTerm(match.name);
-    }
-  }, [location.state?.districtName, districtsData]);
 
   const handleDistrictClick = (district) => {
     setSelectedDistrict(district);
@@ -81,9 +83,9 @@ const DistrictsView = () => {
   };
 
   const getFilteredPlaces = () => {
-    if (!selectedDistrict) return [];
-    if (filterCategory === "All") return selectedDistrict.touristPlaces;
-    return selectedDistrict.touristPlaces.filter(
+    if (!activeDistrict) return [];
+    if (filterCategory === "All") return activeDistrict.touristPlaces;
+    return activeDistrict.touristPlaces.filter(
       (place) => place.category === filterCategory,
     );
   };
@@ -94,7 +96,7 @@ const DistrictsView = () => {
         <div className="loading">Loading districts...</div>
       ) : error ? (
         <div className="error">{error}</div>
-      ) : !selectedDistrict ? (
+      ) : !activeDistrict ? (
         <>
           <div className="districts-header">
             <h1>Explore Sri Lanka's 25 Districts</h1>
@@ -135,22 +137,22 @@ const DistrictsView = () => {
 
           <div className="district-detail">
             <div className="district-detail-header">
-              <h1>{selectedDistrict.name} District</h1>
-              <p className="province-badge">{selectedDistrict.province}</p>
+              <h1>{activeDistrict.name} District</h1>
+              <p className="province-badge">{activeDistrict.province}</p>
             </div>
 
             <p className="district-description">
-              {selectedDistrict.description}
+              {activeDistrict.description}
             </p>
 
             <div className="map-container">
               <iframe
-                title={`Map of ${selectedDistrict.name}`}
+                title={`Map of ${activeDistrict.name}`}
                 width="100%"
                 height="400"
                 frameBorder="0"
                 style={{ border: 0 }}
-                src={`https://maps.google.com/maps?q=${selectedDistrict.coordinates.lat},${selectedDistrict.coordinates.lng}&z=10&output=embed`}
+                src={`https://maps.google.com/maps?q=${activeDistrict.coordinates.lat},${activeDistrict.coordinates.lng}&z=10&output=embed`}
                 allowFullScreen
               ></iframe>
             </div>
