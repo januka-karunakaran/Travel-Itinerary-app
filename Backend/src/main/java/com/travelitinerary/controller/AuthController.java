@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -21,9 +22,7 @@ public class AuthController {
     public ResponseEntity<?> signup(@RequestBody User user) {
         try {
             if(userRepository.findByEmail(user.getEmail()) != null) {
-                Map<String, String> response = new HashMap<>();
-                response.put("message", "Email already exists!");
-                return ResponseEntity.badRequest().body(response);
+                return ResponseEntity.badRequest().body(message("Email already exists!"));
             }
             User savedUser = userRepository.save(user);
             Map<String, Object> response = new HashMap<>();
@@ -32,9 +31,8 @@ public class AuthController {
             return ResponseEntity.ok(response);
         } catch (Exception e) {
             e.printStackTrace();
-            Map<String, String> response = new HashMap<>();
-            response.put("message", "Signup failed: " + e.getMessage());
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(response);
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body(message("Signup failed: " + e.getMessage()));
         }
     }
 
@@ -53,14 +51,39 @@ public class AuthController {
                 return ResponseEntity.ok(response);
             }
             // Failure: Return error status
-            Map<String, String> response = new HashMap<>();
-            response.put("message", "Invalid Credentials");
-            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(response);
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(message("Invalid Credentials"));
         } catch (Exception e) {
             e.printStackTrace();
-            Map<String, String> response = new HashMap<>();
-            response.put("message", "Login failed: " + e.getMessage());
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(response);
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body(message("Login failed: " + e.getMessage()));
         }
+    }
+
+    @PostMapping("/forgot-password")
+    public ResponseEntity<?> forgotPassword(@RequestBody User user) {
+        try {
+            if (user == null || user.getEmail() == null || user.getEmail().isBlank()) {
+                return ResponseEntity.badRequest().body(message("Email is required"));
+            }
+
+            User existing = userRepository.findByEmail(user.getEmail().trim());
+            if (existing == null) {
+                return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                        .body(message("No account found for this email"));
+            }
+
+            // In production this would trigger an email workflow with a signed reset token.
+            return ResponseEntity.ok(message("Reset instructions sent to your email"));
+        } catch (Exception e) {
+            e.printStackTrace();
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body(message("Password reset failed: " + e.getMessage()));
+        }
+    }
+
+    private Map<String, String> message(String text) {
+        Map<String, String> response = new HashMap<>();
+        response.put("message", text);
+        return response;
     }
 }

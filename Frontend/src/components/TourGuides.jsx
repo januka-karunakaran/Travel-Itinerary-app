@@ -5,6 +5,7 @@ import "./TourGuides.css";
 
 const TourGuides = () => {
   const [filterSpec, setFilterSpec] = useState("All");
+  const [search, setSearch] = useState("");
   const [guides, setGuides] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
@@ -46,21 +47,64 @@ const TourGuides = () => {
     };
   }, []);
 
-  const filteredGuides =
-    filterSpec === "All"
-      ? guides
-      : guides.filter((guide) =>
-          guide.specialization.some((spec) => spec.includes(filterSpec)),
-        );
+  const normalizedSearch = search.trim().toLowerCase();
+  const filteredGuides = guides.filter((guide) => {
+    const specializations = guide.specialization || [];
+    const districts = guide.districts || [];
+    const specializationMatch =
+      filterSpec === "All" ||
+      specializations.some((spec) =>
+        spec.toLowerCase().includes(filterSpec.toLowerCase()),
+      );
+
+    const searchMatch =
+      !normalizedSearch ||
+      guide.name?.toLowerCase().includes(normalizedSearch) ||
+      districts.some((district) =>
+        district.toLowerCase().includes(normalizedSearch),
+      );
+
+    return specializationMatch && searchMatch;
+  });
+
+  const availableCount = guides.filter(
+    (guide) => guide.availability?.toLowerCase() === "available",
+  ).length;
 
   return (
     <div className="tour-guides">
       <div className="guides-header">
-        <h1>Find Your Perfect Tour Guide</h1>
+        <p className="guides-kicker">Professional Guide Directory</p>
+        <h1>Find A Licensed Guide For Your Journey</h1>
         <p>
-          Connect with experienced, certified local guides for an authentic Sri
-          Lankan experience
+          Connect with certified local experts for structured, reliable, and
+          memorable travel experiences across Sri Lanka.
         </p>
+
+        <div className="guides-summary">
+          <div className="guides-summary__item">
+            <strong>{guides.length}</strong>
+            <span>Total Guides</span>
+          </div>
+          <div className="guides-summary__item">
+            <strong>{availableCount}</strong>
+            <span>Currently Available</span>
+          </div>
+          <div className="guides-summary__item">
+            <strong>{Math.max(specializations.length - 1, 0)}</strong>
+            <span>Specialties</span>
+          </div>
+        </div>
+
+        <div className="guides-search">
+          <input
+            type="text"
+            placeholder="Search by guide name or district"
+            value={search}
+            onChange={(event) => setSearch(event.target.value)}
+            aria-label="Search guides"
+          />
+        </div>
 
         <div className="specialization-filter">
           {specializations.map((spec) => (
@@ -105,20 +149,22 @@ const TourGuides = () => {
                 <div className="guide-info">
                   <h3>{guide.name}</h3>
                   <p className="guide-experience">
-                    {guide.experience} of experience
+                    {guide.experience || "Experience not listed"}
                   </p>
 
                   <div className="guide-rating">
-                    <span className="rating-stars">⭐ {guide.rating}</span>
+                    <span className="rating-stars">
+                      Rating {guide.rating || "N/A"}
+                    </span>
                     <span className="rating-reviews">
-                      ({guide.reviewsCount} reviews)
+                      ({guide.reviewsCount || 0} reviews)
                     </span>
                   </div>
 
                   <div className="guide-languages">
                     <strong>Languages:</strong>
                     <div className="lang-tags">
-                      {guide.languages.map((lang, index) => (
+                      {(guide.languages || []).map((lang, index) => (
                         <span key={index} className="lang-tag">
                           {lang}
                         </span>
@@ -129,7 +175,7 @@ const TourGuides = () => {
                   <div className="guide-specializations">
                     <strong>Specializations:</strong>
                     <div className="spec-tags">
-                      {guide.specialization.map((spec, index) => (
+                      {(guide.specialization || []).map((spec, index) => (
                         <span key={index} className="spec-tag">
                           {spec}
                         </span>
@@ -138,7 +184,8 @@ const TourGuides = () => {
                   </div>
 
                   <div className="guide-districts">
-                    <strong>Coverage:</strong> {guide.districts.join(", ")}
+                    <strong>Coverage:</strong>{" "}
+                    {(guide.districts || []).join(", ")}
                   </div>
 
                   <p className="guide-description">{guide.description}</p>
@@ -159,24 +206,24 @@ const TourGuides = () => {
 
                   <div className="guide-actions">
                     <a
-                      href={`tel:${guide.contact.phone}`}
+                      href={`tel:${guide.contact?.phone || ""}`}
                       className="contact-btn phone-btn"
                     >
-                      📞 Call
+                      Call
                     </a>
                     <a
-                      href={`https://wa.me/${guide.contact.whatsapp.replace(/\+/g, "")}`}
+                      href={`https://wa.me/${(guide.contact?.whatsapp || "").replace(/\+/g, "")}`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="contact-btn whatsapp-btn"
                     >
-                      💬 WhatsApp
+                      WhatsApp
                     </a>
                     <a
-                      href={`mailto:${guide.contact.email}`}
+                      href={`mailto:${guide.contact?.email || ""}`}
                       className="contact-btn email-btn"
                     >
-                      ✉️ Email
+                      Email
                     </a>
                   </div>
                 </div>
